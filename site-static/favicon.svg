@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- background plate, hairline border -->
+  <rect width="32" height="32" fill="#fcfcfd"/>
+  <rect x="0.5" y="0.5" width="31" height="31" fill="none" stroke="#dfe2e8" stroke-width="1"/>
+
+  <!-- tick strip across the top, mirrors the Nav -->
+  <g fill="#cfd3da">
+    <rect x="2"  y="2" width="2" height="3"/>
+    <rect x="6"  y="2" width="2" height="3"/>
+    <rect x="10" y="2" width="2" height="3"/>
+    <rect x="14" y="2" width="2" height="3" fill="#9aa1ac"/>
+    <rect x="18" y="2" width="2" height="3"/>
+    <rect x="22" y="2" width="2" height="3"/>
+    <rect x="26" y="2" width="2" height="3"/>
+  </g>
+
+  <!-- main mark — graphite block with amber signal core -->
+  <rect x="6"  y="9"  width="20" height="17" fill="#1d2026"/>
+  <rect x="11" y="13" width="10" height="9"  fill="#d39a3a"/>
+
+  <!-- bottom baseline + amber LED dot, instrument feel -->
+  <rect x="2" y="29" width="28" height="1" fill="#dfe2e8"/>
+  <rect x="3" y="27" width="2"  height="2" fill="#d39a3a"/>
+</svg>

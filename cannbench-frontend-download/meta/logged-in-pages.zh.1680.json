@@ -1,0 +1,621 @@
+[
+  {
+    "name": "01-overview",
+    "url": "https://cannbench.com/",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "CANN Bench",
+      "昇腾算子公开评测基准。",
+      "基础向量算子",
+      "归约与索引模式",
+      "张量与融合算子",
+      "Attention 与块级工作负载",
+      "从任务规格开始",
+      "提交算子实现",
+      "在 Ascend NPU 上运行",
+      "在排行榜上比较"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n01\n公开评测基准\nCANN Bench\n910C + 950PR\nCANN BENCH · ASCEND-NPU\n昇腾算子公开评测基准。\n\n从统一任务规格出发,通过精度校验,在真实 Ascend NPU 上采集性能,并在排行榜中比较结果。\n\n浏览算子\n查看排行榜\n提交算子\n公开任务\nLevel 1-4\n真实 NPU\n可追溯结果\n910C + 950PR · LIVE\n任务规格与参考实现\n先精度校验,再比较性能\n任务日志、产物与排行榜结果\n开源仓库\nGitCode 开源仓\n包含任务规格、工程样例、评测器代码与贡献流程。\n技术报告\n评测体系设计\n说明评分公式、任务分级与评测方法。\n03 · 任务目录\n算子数: 53\nL1\nL1\n基础向量算子\n8\n\nElement-wise 与激活类负载用于建立最基础的代码生成契约。\n\nExp · ForeachAddcdivScalar · ForeachNorm · Gelu\nL2\nL2\n归约与索引模式\n16\n\n多输入输出、归约和索引访问任务考察实际算子控制流。\n\nApplyAdamW · ApplyRotaryPosEmb · ArgMax · CrossEntropyLoss\nL3\nL3\n张量与融合算子\n21\n\n矩阵、卷积与向量融合任务检验优化能力是否能离开玩具样例。\n\nAdaptiveAvgPool3D · AddRmsNormDynamicQuant · Conv2D · Conv3DBackpropFilter\nL4\nL4\nAttention 与块级工作负载\n8\n\n复杂融合算子把评测得分连接到真实训推压力。\n\nGQA · GroupedMatmulSwigluQuant · GRU · LSTM\n04 · 评测路径\n规格 → 提交 → Runner → 评分\n01\n从任务规格开始\n\n算子 proto、测例、Golden 代码与精度阈值共同定义被评测的精确契约。\n\n02\n提交算子实现\n\nACLNN Launch 与 Direct Launch 脚手架都支持单算子或多算子 wheel 进入评测。\n\n提交数: 15\n03\n在 Ascend NPU 上运行\n\nRunner 会构建、安装、隔离评测,完成精度校验并采集逐测例核函数耗时。\n\n04\n在排行榜上比较\n\n评分、加速比、通过率与任务产物让模型、Agent 和实现之间的比较可追溯。\n\nRUNNER 状态\njob_4603ea2e77c8\n$ cann-bench submit offical-tasks\n[00:01] staging submission · offical-tasks RUNNING…\n[00:02] compiling op_kernel/…\n[00:14] correctness\n[00:27] performance\n阶段 · 空闲\noffical-tasks\n动态 · 最新\nxchang1121\noffical-tasks\n失败\n13m\nxchang1121\noffical-tasks\n失败\n45m\nxchang1121\noffical-tasks\n失败\n1h\nxchang1121\noffical-tasks\n失败\n1h\nxchang1121\noffical-tasks\n失败\n2h",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/01-overview-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/01-overview-full.png"
+  },
+  {
+    "name": "02-benchmarks",
+    "url": "https://cannbench.com/benchmarks",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "评测集"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n02\n评测 · 集合\n评测集\n2 / 2\n⌕\nOffical-Tasks\n版本\n0.3.0\n等级数\n4\n算子数\n53\n用例数\n1060\nLEVEL 1\n8 ops · 160 cases\nExp\nForeachAddcdivScalar\nForeachNorm\nGelu\n+4\nLEVEL 2\n16 ops · 320 cases\nApplyAdamW\nApplyRotaryPosEmb\nArgMax\nCrossEntropyLoss\n+12\nLEVEL 3\n21 ops · 420 cases\nAdaptiveAvgPool3D\nAddRmsNormDynamicQuant\n+19\nLEVEL 4\n8 ops · 160 cases\nGQA\nGroupedMatmulSwigluQuant\nGRU\nLSTM\nMHA\nMLA\n+2\n标准评测子集\nMICRO\n16 ops\nKernel Bench\n隐藏\n\nMeta bundle: 53 operators across 4 level(s).\n\n版本\n1.0\n等级数\n4\n算子数\n53\n用例数\n1060\nLEVEL 1\n8 ops · 160 cases\nExp\nForeachAddcdivScalar\nForeachNorm\nGelu\n+4\nLEVEL 2\n16 ops · 320 cases\nApplyAdamW\nApplyRotaryPosEmb\nArgMax\nCrossEntropyLoss\n+12\nLEVEL 3\n21 ops · 420 cases\nAdaptiveAvgPool3D\nAddRmsNormDynamicQuant\n+19\nLEVEL 4\n8 ops · 160 cases\nGQA\nGroupedMatmulSwigluQuant\nGRU\nLSTM\nMHA\nMLA\n+2",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/02-benchmarks-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/02-benchmarks-full.png"
+  },
+  {
+    "name": "03-updates",
+    "url": "https://cannbench.com/updates",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "版本动态",
+      "CANN Bench 介绍",
+      "Micro Bench 与子集排行榜"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n版本动态\n\n关于 CANN Bench 版本、评测方法和 Ascend 算子评测的技术文章。\n\n2026/06/30\nCANN Bench 介绍\n\n介绍 CANN Bench 的任务包、HAP 评分、正确性校验，以及面向 Ascend NPU 算子 kernel 的评测可信边界。\n\n阅读更多\n2026/06/30\nMicro Bench 与子集排行榜\n\n介绍系统等级子集和维护者自定义 micro 评测集如何支撑更聚焦的 Agent 对比，同时不替代完整评测。\n\n阅读更多",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/03-updates-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/03-updates-full.png"
+  },
+  {
+    "name": "04-leaderboard",
+    "url": "https://cannbench.com/leaderboard",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "排行榜"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n03\n排名 · 全局\n排行榜\n15 个方案 · 53 个算子\n评测集\nOffical-Tasks\n▾\n子集\n全部\n▾\n评分\n排行榜按团队聚合码聚合;同一行会汇总该组内每个算子的历史最高分。\n上行=标准用例 · 下行=隐藏用例 · 总分=标准+隐藏\n最高总分\n1725.41\nCANNBot Harness Opencode Qwen3.7-max · 950pr\n中位基准加速比\n0.180\n×\n理论 0.03× · 基于 10 个方案\n通过率\n82.5\n%\n4094 / 4961 测例\n提交算子\n32/53\n完整任务集\n⌕\n硬件\n全部\n950PR\n910C\n版本\n全部\n0.3.0\n总分 ↓\n清除筛选\n更多筛选\n2 项已启用\n#\n方案\n硬件\n用户\n总分\n↓\n平均分\n↕\n基准加速比\n↕\n理论加速比\n↕\n提交算子\n↕\n测例\n↕\n更新\n↕\n01\nCANNBot Harness Opencode Qwen3.7-max\njob_b95ac73091a5 · Offical-Tasks · 0.3.0\n950PR\nmagicjason0007\nOffical-Tasks\n1725.41\n1725.4 · 0.0\n53.92\n—\n0.180×\n—\n0.029×\n—\n32/53\n527/640\n—\n2026.06.30\n02\nCANNBot SIMT Opencode Qwen3.7-max\n2 任务 · Offical-Tasks · 0.3.0\n950PR\nmagicjason0007\nOffical-Tasks\n1462.09\n672.0 · 790.1\n51.69\n60.78\n0.197×\n0.508×\n0.055×\n0.051×\n13/53\n219/260\n849/1040\n2026.06.30\n03\nSIMT Qwen3.7-max\n4 任务 · Offical-Tasks · 0.3.0\n950PR\nguankarl\nOffical-Tasks\n1337.87\n613.4 · 724.5\n51.11\n60.38\n0.300×\n1.006×\n0.076×\n0.079×\n12/53\n199/240\n773/960\n2026.06.30\n04\nSIMT Qwen3.7-max new\n2 任务 · Offical-Tasks · 0.3.0\n950PR\nguankarl\nOffical-Tasks\n1103.71\n498.6 · 605.1\n62.33\n75.64\n0.364×\n1.136×\n0.102×\n0.114×\n8/53\n159/160\n618/640\n2026.06.30\n05\nglm5.2\n2 任务 · Offical-Tasks · 0.3.0\n950PR\nlu-zhirui\nOffical-Tasks\n893.73\n893.7 · 0.0\n55.86\n—\n0.243×\n—\n0.043×\n—\n16/53\n271/320\n—\n2026.07.03\n06\nCANNBot noharness Qwen3.7-max\n7 任务 · Offical-Tasks · 0.3.0\n950PR\nyifangao\nOffical-Tasks\n295.16\n295.2 · 0.0\n42.17\n—\n0.055×\n—\n0.007×\n—\n7/53\n100/140\n—\n2026.07.03\n07\nCANNBot harness Qwen3.7-max\n8 任务 · Offical-Tasks · 0.3.0\n950PR\nyifangao\nOffical-Tasks\n254.05\n254.1 · 0.0\n31.76\n—\n0.116×\n—\n0.018×\n—\n8/54\n73/141\n—\n2026.07.03\n08\nCANNBot harness Qwen3.7-max\n4 任务 · Offical-Tasks · 0.3.0\n950PR\nsu-yueming\nOffical-Tasks\n214.79\n105.2 · 109.6\n52.60\n54.79\n0.065×\n0.284×\n0.015×\n0.028×\n2/53\n38/40\n125/160\n2026.07.03\n09\nCANNBot noharness Qwen3.7-max\n4 任务 · Offical-Tasks · 0.3.0\n950PR\nsu-yueming\nOffical-Tasks\n167.78\n78.8 · 89.0\n39.39\n44.50\n0.037×\n0.151×\n0.010×\n0.015×\n2/53\n24/40\n99/160\n2026.06.26\n10\nCANNBot harness Qwen3.7-max\njob_0e6ab8caa8d5 · Offical-Tasks · 0.3.0\n950PR\nsym660\nOffical-Tasks\n51.27\n51.3 · 0.0\n51.27\n—\n0.025×\n—\n0.004×\n—\n1/53\n20/20\n—\n2026.06.27\n< 显示 10 / 15 >\n清除筛选",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/04-leaderboard-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/04-leaderboard-full.png"
+  },
+  {
+    "name": "05-submit",
+    "url": "https://cannbench.com/submit",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "提交算子"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n04\n新提交\n提交算子\n提交人 gcw_MYW56D5P\n说明\n·\n每个算子在独立子进程中评测——某个算子崩溃/超时(默认 4 分钟)不会影响其他算子。\n·\n从评测集下载 spec、参考实现与 cases.yaml。\n提交 · ZIP\n\n请基于 third_party/cann-bench/examples/aclnn_launch_example 或 direct_launch_example。打包 example 目录内的文件,让 build.sh、setup.py、CMakeLists.txt、cann_bench/、csrc/、cmake/、scripts/ 位于 zip 根目录。≤ 50 MB。\n\n提交格式\n多算子 · 一个 wheel 可提供多个算子。\n评测集\nOffical-Tasks · offical-tasks · 0.3.0\n\n· 选择用于评测本次提交的评测集。\n\n目标硬件\n910C\n950PR\n\n· 当前在线: 910C, 950PR\n\n提交标签\n可选\nAGENT\nHARNESS\nMODEL\nTAG\n\n· 排行榜公开展示标签。可以先用模板生成,再直接编辑最终展示名称。\n\n团队聚合码\n自动私有聚合码\n显示\n\n· 排行榜按团队聚合码合并,不是按公开 Tag 合并。同一个聚合码下,排行榜会取每个算子的历史最高分并求和,因此团队成员可以分别提交不同算子并聚合到同一行。该行展示的公开 Tag 来自第一个使用这个聚合码的提交;聚合码本身仅任务 owner 和 maintainer/admin 可见。\n\n· 留空时后端会用你的内部用户 ID 和当前 Tag 自动创建私有聚合码: u_gc_a60f28dcb023661f untagged\n\n私有提交\n仅提交者和 admin 可见,不会出现在公开任务列表或排行榜中。\n提交评测\n∞",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/05-submit-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/05-submit-full.png"
+  },
+  {
+    "name": "06-jobs",
+    "url": "https://cannbench.com/jobs",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "全部任务"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n05\n提交 · 全部\n全部任务\n110 个任务\n状态\n全部\n成功\n排队\n编译失败\n精度错误\n性能失败\n基础设施错误\n已取消\n已作废\n搜索\n分数\n排序\n最新优先\n最早优先\n分数从高到低\n分数从低到高\n按用户\nID\n算子\n版本\n状态\n评分\n用户\n日期\njob_4603ea2e77c8\n910C\nForeachAddcdivScalar, ApplyRotaryPosEmb, Cummin +14\n0.3.0\n部分通过\n4.00\n0/340\nxchang1121\n2026.07.04\n下载\n删除\njob_22ac6f188d5b\n910C\nForeachAddcdivScalar, ApplyRotaryPosEmb, Cummin +14\n0.3.0\n部分通过\n4.00\n0/340\nxchang1121\n2026.07.04\n下载\n删除\njob_b24ced66c522\n910C\nForeachAddcdivScalar, ApplyRotaryPosEmb, Cummin +15\n0.3.0\n编译失败\n—\n0/360\nxchang1121\n2026.07.04\n下载\n删除\njob_b85b94192449\n910C\nForeachAddcdivScalar, ApplyRotaryPosEmb, Cummin +15\n0.3.0\n编译失败\n—\n0/360\nxchang1121\n2026.07.04\n下载\n删除\njob_acf888ac77ae\n910C\nForeachAddcdivScalar, ApplyRotaryPosEmb, Cummin +15\n0.3.0\n编译失败\n—\n0/360\nxchang1121\n2026.07.04\n下载\n删除\njob_fbd8fe511ab7\n910C\nForeachAddcdivScalar, ApplyRotaryPosEmb, Cummin +15\n0.3.0\n编译失败\n—\n0/360\nxchang1121\n2026.07.04\n下载\n删除\njob_5b019b74c3ae\n910C\nForeachAddcdivScalar, ApplyRotaryPosEmb, Cummin +13\n0.3.0\n编译失败\n—\n0/320\nxchang1121\n2026.07.04\n下载\n删除\njob_0638cad42f18\n910C\nUnique\n0.3.0\n部分通过\n37.59\n15/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_d9ea7b342c96\n910C\nUnsortedSegmentSum\n0.3.0\n成功\n56.71\n20/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_ffeb54775470\n910C\nUnsortedSegmentSum\n0.3.0\n成功\n0.00\n20/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_a33b460ac8b2\n910C\nGridSampler3D\n0.3.0\n部分通过\n30.91\n7/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_a7d629a93a8a\n950PR\nForeachAddcdivScalar, SwiGlu, ApplyRotaryPosEmb +13\n0.3.0\n部分通过\n891.65\n271/320\nlu-zhirui\n2026.07.03\n下载\n删除\njob_e24e5d32954b\n910C\nGroupedMatmul\n0.3.0\n部分通过\n27.73\n9/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_acbce2289fd3\n910C\nWeightQuantBatchMatmul\n0.3.0\n部分通过\n0.00\n10/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_262bba35249c\n910C\nROIAlign\n0.3.0\n部分通过\n34.13\n10/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_d99d1a1a3798\n910C\nConv2D\n0.3.0\n部分通过\n0.00\n19/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_4202bfd110d7\n910C\nResizeBilinear\n0.3.0\n部分通过\n38.70\n12/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_27679a0e862b\n910C\nMoeReRouting\n0.3.0\n部分通过\n56.10\n16/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_169ff6db993a\n910C\nConv3DBackpropFilter\n0.3.0\n部分通过\n0.00\n17/20\nvINyLogY\n2026.07.03\n下载\n删除\njob_d001a6953b79\n910C\nDepthwiseConv2D\n0.3.0\n部分通过\n45.20\n16/20\nvINyLogY\n2026.07.03\n下载\n删除\n< 第 1 / 6 >\n上一页\n下一页",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/06-jobs-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/06-jobs-full.png"
+  },
+  {
+    "name": "07-account",
+    "url": "https://cannbench.com/account",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "账户"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n06\n账户 · 访问\n账户\ngcw_MYW56D5P · u_gc_a60f28dcb023661f\n修改站内 ID\nu_gc_a60f28dcb023661f\n保存\n\n3-32 位字母、数字、下划线或短横线。每 30 天可改一次。\n\nCANN BENCH TOKEN\n0 个可用\n7 天\n30 天\n90 天\n180 天\n1 年\n永久有效\n生成 Token\n\nCLI 提交和获取结果时使用它作为 Bearer token。默认 30 天过期;只有可信自动化场景建议选择永久有效。完整 Token 只显示一次;BenchSite 只保存哈希。\n\nCLI 提交 · 获取结果\nToken 占位符\n\n生成 Token 后,下面脚本会自动带上这个 Token。如果当前页面没有显示新 Token,运行前请把 <CANN_BENCH_TOKEN> 替换成你已保存的 Token。\n\n目标硬件\n910C\n950PR\n提交标签\n团队聚合码\n\n· 留空时后端会用你的内部用户 ID 和当前 Tag 自动创建私有聚合码: u_gc_a60f28dcb023661f Agent CLI\n\nCLI 提交指南\n复制提交脚本\n\n保存为 benchsite-submit.sh,然后把提交 zip 作为第一个参数传入: bash benchsite-submit.sh submission.zip\n\n#!/usr/bin/env bash\nset -euo pipefail\n\nBENCHSITE_URL='https://cannbench.com'\nBENCHSITE_TOKEN='<CANN_BENCH_TOKEN>'\n# BENCHSITE_TOKEN is a CANN Bench Token generated from the BenchSite account page.\nSUBMISSION_ZIP=\"${1:-submission.zip}\"\nTARGET_HARDWARE='910c'\nSUBMISSION_TAG='Agent CLI'\nAGGREGATION_TOKEN='u_gc_a60f28dcb023661f Agent CLI'\n\nif [[ ! -f \"$SUBMISSION_ZIP\" ]]; then\n  echo \"submission zip not found: $SUBMISSION_ZIP\" >&2\n  exit 1\nfi\n\nresponse_file=\"$(mktemp)\"\ntrap 'rm -f \"$response_file\"' EXIT\n\nhttp_status=\"$(curl -sS -o \"$response_file\" -w \"%{http_code}\" -X POST \"${BENCHSITE_URL%/}/api/submissions\" \\\n  -H \"Authorization: Bearer $BENCHSITE_TOKEN\" \\\n  -F \"file=@${SUBMISSION_ZIP}\" \\\n  -F \"source=cli\" \\\n  -F \"target_hardware=${TARGET_HARDWARE}\" \\\n  -F \"submission_tag=${SUBMISSION_TAG}\" \\\n  -F \"aggregation_token=${AGGREGATION_TOKEN}\")\"\n\nif [[ \"$http_status\" -lt 200 || \"$http_status\" -ge 300 ]]; then\n  echo \"submission failed: HTTP $http_status\" >&2\n  python3 - \"$response_file\" <<'PY' >&2\nimport json\nimport sys\nfrom pathlib import Path\n\ntext = Path(sys.argv[1]).read_text(errors=\"replace\")\ntry:\n    payload = json.loads(text)\nexcept Exception:\n    print(text.strip() or \"(empty response)\")\n    raise SystemExit(0)\n\ndetail = payload.get(\"detail\", payload) if isinstance(payload, dict) else payload\n\ndef fmt(value):\n    if isinstance(value, list):\n        return \"\\n\".join(filter(None, (fmt(item) for item in value)))\n    if isinstance(value, dict):\n        message = value.get(\"message\") or value.get(\"msg\")\n        location = value.get(\"loc\")\n        if message:\n            if isinstance(location, list):\n                loc = \".\".join(str(part) for part in location)\n            else:\n                loc = str(location) if location else \"\"\n            return f\"[{loc}] {message}\" if loc else str(message)\n        return json.dumps(value, ensure_ascii=False, indent=2)\n    return \"\" if value is None else str(value)\n\nprint(fmt(detail) or \"(empty error detail)\")\nPY\n  exit 1\nfi\n\ncat \"$response_file\"\n\nCLI 获取结果指南\n复制结果脚本\n\n用提交返回的 job.id 轮询状态、保存日志和 artifact 索引,并打印评分摘要: bash benchsite-result.sh job_xxx\n\n#!/usr/bin/env bash\nset -euo pipefail\n\nBENCHSITE_URL='https://cannbench.com'\nBENCHSITE_TOKEN='<CANN_BENCH_TOKEN>'\n# BENCHSITE_TOKEN is a CANN Bench Token generated from the BenchSite account page.\nJOB_ID=\"${1:-}\"\n\nif [[ -z \"$JOB_ID\" ]]; then\n  echo \"usage: $0 <job_id>\" >&2\n  exit 1\nfi\n\nOUT_DIR=\"benchsite-results/$JOB_ID\"\nmkdir -p \"$OUT_DIR\"\n\nauth_header=(-H \"Authorization: Bearer $BENCHSITE_TOKEN\")\napi_get() {\n  curl -fsS \"${auth_header[@]}\" \"${BENCHSITE_URL%/}/api/$1\"\n}\n\necho \"tracking $JOB_ID\"\nwhile true; do\n  job_json=\"$(api_get \"jobs/$JOB_ID\")\"\n  printf '%s\\n' \"$job_json\" > \"$OUT_DIR/job.json\"\n  status=\"$(python3 -c 'import json,sys; print(json.load(sys.stdin)[\"job\"][\"status\"])' <<<\"$job_json\")\"\n  echo \"status=$status\"\n  case \"$status\" in\n    succeeded|validation_failed|prepare_failed|compile_failed|correctness_failed|performance_failed|archive_failed|timed_out|infra_error|canceled|cancelled|failed)\n      break\n      ;;\n  esac\n  sleep 10\ndone\n\napi_get \"jobs/$JOB_ID/logs\" > \"$OUT_DIR/logs.json\" || true\napi_get \"jobs/$JOB_ID/artifacts\" > \"$OUT_DIR/artifacts.json\" || true\n\npython3 - \"$OUT_DIR/job.json\" <<'PY'\nimport json\nimport sys\nfrom pathlib import Path\n\npayload = json.loads(Path(sys.argv[1]).read_text())\njob = payload[\"job\"]\nprint(f\"job: {job['id']}\")\nprint(f\"status: {job['status']}\")\nstage_summary = job.get(\"stage_summary\") or {}\ncurrent_stage = stage_summary.get(\"current_stage\")\nfailed_stage = stage_summary.get(\"failed_stage\")\nif current_stage:\n    print(f\"stage: {current_stage}\")\nif failed_stage:\n    print(f\"failed_stage: {failed_stage}\")\n    if stage_summary.get(\"failed_status\"):\n        print(f\"failed_status: {stage_summary.get('failed_status')}\")\nif job.get(\"error_code\"):\n    print(f\"error_code: {job['error_code']}\")\nif job.get(\"error_message\"):\n    print(f\"error: {job['error_message']}\")\n\nresults = job.get(\"results\")\nif not results:\n    print(\"results: unavailable\")\n    raise SystemExit(0)\n\nscore = results.get(\"overall_score\") or (results.get(\"summary\") or {}).get(\"overall_score\")\npassed = results.get(\"passed_cases\")\ntotal = results.get(\"total_cases\")\nprint(f\"score: {score}\")\nprint(f\"cases: {passed}/{total}\")\nprint(f\"operators: {results.get('total_operators')}\")\nfor op in results.get(\"operators\") or []:\n    name = op.get(\"operator\") or op.get(\"name\")\n    op_score = op.get(\"score\")\n    op_passed = op.get(\"passed_cases\")\n    op_total = op.get(\"total_cases\")\n    speedup = op.get(\"geometric_mean_speedup\") or op.get(\"avg_speedup\")\n    print(f\"- {name}: cases={op_passed}/{op_total} score={op_score} speedup={speedup}\")\nPY\n\necho \"saved: $OUT_DIR\"\n\n可用 TOKEN\n暂无可用 Token。\n使用本地 Agent 做 CLI 提交前,请先生成一个 Token。",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/07-account-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/07-account-full.png"
+  },
+  {
+    "name": "08-admin",
+    "url": "https://cannbench.com/admin",
+    "clientWidth": 1280,
+    "hasHorizontalOverflow": true,
+    "headings": [
+      "管理面板"
+    ],
+    "lang": "en",
+    "nav": [
+      {
+        "href": "/",
+        "text": "CANN·BENCH BENCHMARK PLATFORM"
+      },
+      {
+        "href": "/",
+        "text": "概览"
+      },
+      {
+        "href": "/benchmarks",
+        "text": "评测集"
+      },
+      {
+        "href": "/updates",
+        "text": "版本动态"
+      },
+      {
+        "href": "/leaderboard",
+        "text": "排行榜"
+      },
+      {
+        "href": "/submit",
+        "text": "提交"
+      },
+      {
+        "href": "/jobs",
+        "text": "任务"
+      },
+      {
+        "href": "/admin",
+        "text": "管理"
+      },
+      {
+        "href": "https://gitcode.com/cann/cann-bench",
+        "text": "GitCode"
+      },
+      {
+        "href": null,
+        "text": "EN"
+      },
+      {
+        "href": null,
+        "text": "中"
+      },
+      {
+        "href": null,
+        "text": "主题"
+      },
+      {
+        "href": "/account",
+        "text": "gcw_MYW56D5P"
+      },
+      {
+        "href": null,
+        "text": "退出"
+      }
+    ],
+    "scrollWidth": 1479,
+    "text": "CANN·BENCH\nBENCHMARK PLATFORM\n概览\n评测集\n版本动态\n排行榜\n提交\n任务\n管理\nGitCode\n910C+950PR·ONLINE\nEN\n中\n[MAINTAINER]\ngcw_MYW56D5P\n退出\n06\n管理\n管理面板\n用户\n运维\n任务\n评测包\n子集\n权限\n安全报告\nSecurity Safety Report\n查看公网部署安全控制、认证鉴权链路、Runner 隔离和剩余风险。\n打开报告\n32 位用户\n用户名\n角色\n每日配额\nGITCODE\nID\n注册时间\ntest_hw_gitcode_399\nuser\n今日 0/0\ntest_hw_gitcode_399\nu_gc_95229749976fc207\n2026/7/3 17:35:14\nandingfangt\nuser\n今日 0/0\nandingfangt\nu_gc_6e6721b31fd199c7\n2026/7/3 17:20:21\nyyn0510\nuser\n今日 0/0\nyyn0510\nu_gc_edd410d1e627aef9\n2026/7/3 11:20:42\nlu-zhirui\nuser\n今日 5/5 · bonus 2\nlu-zhirui\nu_gc_1a39da818f3757b0\n2026/7/3 11:02:41\ndubinaibiancheng\nuser\n今日 0/0\ndubinaibiancheng\nu_gc_940e0f3abb0f8dd2\n2026/7/3 10:35:01\nAnastasios_Zouzias\nuser\n今日 0/0\nanastasios\nu_gc_4eb973b56d2fa67e\n2026/7/2 19:03:56\nendrix\nuser\n今日 0/0\nendrix\nu_gc_dee036cc39944fa7\n2026/7/2 18:59:34\nkostyab\nuser\n今日 0/0\nkostyab\nu_gc_fa1144f57efdedb5\n2026/7/2 17:45:56\ngcw_xQb0kdMY\nuser\n今日 0/0\ngcw_xQb0kdMY\nu_gc_c456b6b3865504ef\n2026/7/2 17:34:55\ntf2381873\nuser\n今日 0/0\ntf2381873\nu_gc_454c16d37c79effc\n2026/7/1 14:06:33\nivan_nosov\nuser\n今日 0/0\nivan_nosov\nu_gc_9eabf796f31d8ccf\n2026/7/1 11:32:39\nxuejinghui\nuser\n今日 0/0\nxuejinghui\nu_gc_c9843ff73a616f60\n2026/6/30 21:55:36\nyifangao\nuser\n今日 30/30 · bonus 4\nyifangao\nu_gc_1c9fb1ced0a96f66\n2026/6/30 21:25:23\nAlmost_CANN\nuser\n今日 0/0\nAlmost_CANN\nu_gc_9c477a17033228f9\n2026/6/30 14:58:37\nm0_46064463\nuser\n今日 0/0\nm0_46064463\nu_gc_f8a413f3a8251df6\n2026/6/30 14:23:20\ngcw_MYW56D5P\nmaintainer\n∞\ngcw_MYW56D5P\nu_gc_a60f28dcb023661f\n2026/6/29 11:20:05\nu010470851\nuser\n今日 0/0\nu010470851\nu_gc_23555d6382027536\n2026/6/29 09:37:47\nguankarl\nuser\n今日 10/10 · bonus 9\nguankarl\nu_gc_c8927cccd602d608\n2026/6/27 14:40:29\nmagicjason0007\nmaintainer\n∞\nmagicjason0007\nu_gc_d0f5061ba5de4e52\n2026/6/27 14:24:19\nxchang1121\nuser\n今日 3/10\nxchang1121\nu_gc_468a109dc5158cd2\n2026/6/25 14:42:15\ngcw_CVgnXbim\nuser\n今日 0/0\ngcw_CVgnXbim\nu_gc_7c73462bbb731ed6\n2026/6/24 18:47:47\ngcw_nYzqSAPW\nuser\n今日 0/0\ngcw_nYzqSAPW\nu_gc_724cb574664e9e17\n2026/6/24 18:40:43\nxssxyz\nuser\n今日 0/0\nxssxyz\nu_gc_928d5be55e048397\n2026/6/24 17:59:14\nc4y\nuser\n今日 0/0\nc4y\nu_gc_7f0072b698d49c09\n2026/6/24 13:16:12\nzhangzijie\nuser\n今日 10/10\nzhangzijie\nu_gc_567943edb0d3ca23\n2026/6/23 16:19:33\nDeng_Pan\nadmin\n∞\nDeng_Pan\nu_gc_752473db3d0d1fa5\n2026/6/23 15:29:59\nyyzhang0715\nuser\n今日 0/0\nyyzhang0715\nu_gc_17945d33a0a1e239\n2026/6/23 15:21:26\nwmw_beta\nuser\n今日 1/1\nwmw_beta\nu_gc_1995777b2807e749\n2026/6/23 15:16:30\nsym660\nuser\n今日 4/4 · bonus 1\nsym660\nu_gc_f4759c361386fb70\n2026/6/23 09:25:58\ngcw_CPhnTET1\nuser\n今日 0/0\ngcw_CPhnTET1\nu_gc_99443ed4409f8a3c\n2026/6/22 21:10:06\nvINyLogY\nuser\n∞ 无限制\nvINyLogY\nu_gc_b9608711dcffda39\n2026/6/22 14:05:39\nsu-yueming\nadmin\n∞\nsu-yueming\nu_gc_28f1949424d0480f\n2026/6/15 22:11:20",
+    "viewport": {
+      "h": 720,
+      "w": 1280
+    },
+    "viewportScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/08-admin-viewport.png",
+    "fullScreenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/screenshots-1680/08-admin-full.png"
+  }
+]

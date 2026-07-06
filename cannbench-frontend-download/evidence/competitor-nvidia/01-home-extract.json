@@ -1,0 +1,336 @@
+{
+  "name": "01-home",
+  "url": "https://research.nvidia.com/benchmarks/sol-execbench",
+  "title": "SOL-ExecBench | GPU Kernel Performance Benchmarks by NVIDIA",
+  "headings": [
+    "SOL-ExecBench",
+    "Benchmark Real-World GPU Kernels Against Hardware Limits",
+    "Real Hardware",
+    "Real Kernels",
+    "Real Limits",
+    "L1 - Single Operations",
+    "L2 - Fused Operations",
+    "Quantization",
+    "NVIDIA uses cookies to improve your experience on our web site. We and our third-party partners also use cookies and other tools to collect and record information you provide as well as information about your interactions with our websites for performance improvement, analytics, and to assist in marketing efforts. By clicking \"Accept All\", you consent to our use of cookies and other tools as described in our Cookie Policy. You can manage your cookie settings by clicking on \"Manage Settings.\" By continuing to use this site or by clicking one of the buttons below, you agree to our Terms of Service (which contains important waivers). Please see our Privacy Policy for more information on our privacy practices. We have detected the Global Privacy Control (GPC) signal and recorded your rejection of all optional cookies on this site for this browser. You can manage your cookie settings by clicking on \"Manage Settings\". Please see our Cookie Policy for more information. To opt out of non-cookie personal information \"sales\" / \"sharing\" for targeted advertising purposes, please visit the NVIDIA Preference Center. Please see our Privacy Policy for more information on our privacy practices. We have detected the Global Privacy Control Signal (GPC) and have opted you out of all optional cookies on this browser. You can manage your cookie settings by clicking on \"Manage Settings\". Please see our Cookie Policy for more information. We have also opted you out of \"sharing\"/\"sales\" of personal information outside of cookies. You can manage these settings in the NVIDIA NVIDIA Preference Center. Please see our Privacy Policy for more information. We have detected the Global Privacy Control Signal (GPC) and have opted you out of all optional cookies on this browser. You can manage your cookie settings by clicking on \"Manage Settings\". Please see our Cookie Policy for more information. We have also opted you out of \"sharing\"/\"sales\" of personal information outside of cookies which overrides at least one of your previous settings. You can manage them in the NVIDIA Preference Center. Please see our Privacy Policy for more information.Manage SettingsReject Optional Accept All"
+  ],
+  "visibleTexts": [
+    "SOL-ExecBenchBenchmark Real-World GPU Kernels Against Hardware LimitsSubmit your optimized GPU kernels. Get your SOL Score on B200 hardware. Compete on the global leaderboard.Explore ProblemsView Leaderboard",
+    "235Active Problems4Collections10,540Total Submissions352Developers",
+    "Real HardwareEvery submission runs on NVIDIA B200 GPUs. No simulations, no estimates, just real execution on real silicon.",
+    "Real KernelsKernels extracted from production LLM inference and training workloads. Optimize what actually matters.",
+    "Real LimitsScored against the hardware's speed-of-light. See exactly how close your kernel gets to peak throughput.",
+    "© 2026 NVIDIA Corporation. All rights reserved.Privacy PolicyYour Privacy ChoicesTerms of ServiceAccessibilityCorporate PoliciesProduct SecurityContact: solexecbench@nvidia.com",
+    "Collection #3B200Quantization33 problems1752 submissions1Cursor33/33 solved",
+    "Collection #1B200L1 - Single Operations94 problems8625 submissions1Amir M. Mir | SF Tensor94/94 solved",
+    "Collection #2B200L2 - Fused Operations82 problems4474 submissions1Cursor82/82 solved",
+    "SOL-ExecBenchBlogProblemsLeaderboardStatusGitHub ↗HuggingFace ↗Paper ↗Log In",
+    "Why SOL-ExecBench?",
+    "CollectionsView All →",
+    "KernelsView All →",
+    "LeaderboardFull Rankings →",
+    "Cite Us",
+    "KernelDevice#1 HolderSOL Score",
+    "002_vae_conv3x3_groupnorm_silu_residual_fusedB200Databricks0.722866",
+    "001_attention_softmax_dropout_value_matmul_backwardB200Coral0.779548",
+    "023_video_latent_vae_encoder_downsamplingB200Recursive0.786987",
+    "069_rms_normB200doubleAI0.799653",
+    "004_attention_output_projection_with_reshape_backwardB200Recursive0.700347",
+    "030_attention_output_projection_with_residualB200ac4k0.520238",
+    "003_lm_head_projection_with_logit_slicingB200ac4k0.530728",
+    "002_decoder_layer_full_blockB200doubleAI0.495846",
+    "001_fused_vision_multihead_attention_with_norms_backwardB200Recursive0.912728",
+    "012_fused_cos_sin_embedding_generationB200doubleAI0.914213",
+    "SOL-ExecBenchBenchmark Real-World GPU Kernels Against Hardware Limits",
+    "235Active Problems",
+    "4Collections",
+    "10,540Total Submissions",
+    "352Developers",
+    "020_vision_patch_merger_spatial_shuffle_mlpB200",
+    "006_hyena_depthwise_conv1d_split_gateB200",
+    "013_fused_residual_rms_norm_backwardB200",
+    "008_expert_output_weighted_index_add_accumulationB200",
+    "010_attention_value_projection_with_transposeB200",
+    "012_fused_cos_sin_embedding_generationB200",
+    "026_video_patch_embedding_projectionB200",
+    "031_repeat_kv_attention_matmulB200",
+    "Submit your optimized GPU kernels. Get your SOL Score on B200 hardware. Compete on the global leaderboard.",
+    "SOL-ExecBench",
+    "If you find our work useful, please cite our paper:",
+    "Kernel",
+    "002_vae_conv3x3_groupnorm_silu_residual_fused",
+    "001_attention_softmax_dropout_value_matmul_backward",
+    "023_video_latent_vae_encoder_downsampling",
+    "069_rms_norm",
+    "004_attention_output_projection_with_reshape_backward",
+    "030_attention_output_projection_with_residual",
+    "003_lm_head_projection_with_logit_slicing",
+    "002_decoder_layer_full_block",
+    "001_fused_vision_multihead_attention_with_norms_backward",
+    "012_fused_cos_sin_embedding_generation",
+    "Every submission runs on NVIDIA B200 GPUs. No simulations, no estimates, just real execution on real silicon.",
+    "Kernels extracted from production LLM inference and training workloads. Optimize what actually matters.",
+    "Scored against the hardware's speed-of-light. See exactly how close your kernel gets to peak throughput.",
+    "Explore ProblemsView Leaderboard",
+    "#1 Holder",
+    "Databricks",
+    "Coral",
+    "Recursive",
+    "doubleAI",
+    "ac4k",
+    "SOL-ExecBenchBlogProblemsLeaderboardStatus",
+    "SOL Score",
+    "0.722866",
+    "0.779548",
+    "0.786987",
+    "0.799653",
+    "0.700347",
+    "0.520238",
+    "0.530728",
+    "0.495846",
+    "0.912728",
+    "0.914213",
+    "Benchmark Real-World GPU Kernels Against Hardware Limits",
+    "Privacy PolicyYour Privacy ChoicesTerms of ServiceAccessibilityCorporate PoliciesProduct Security",
+    "GitHub ↗HuggingFace ↗Paper ↗Log In",
+    "Leaderboard",
+    "BlogProblemsLeaderboardStatus"
+  ],
+  "links": [
+    {
+      "text": "SOL-ExecBench",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench"
+    },
+    {
+      "text": "Blog",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/blog"
+    },
+    {
+      "text": "Problems",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/problems"
+    },
+    {
+      "text": "Leaderboard",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard"
+    },
+    {
+      "text": "Status",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/status"
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/nvidia/sol-execbench"
+    },
+    {
+      "text": "HuggingFace ↗",
+      "href": "https://huggingface.co/datasets/nvidia/sol-execbench"
+    },
+    {
+      "text": "Paper ↗",
+      "href": "https://arxiv.org/abs/2603.19173"
+    },
+    {
+      "text": "Log In",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/login"
+    },
+    {
+      "text": "Explore Problems",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/problems"
+    },
+    {
+      "text": "View Leaderboard",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard"
+    },
+    {
+      "text": "View All →",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/problems"
+    },
+    {
+      "text": "L1 - Single Operations",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/collection/1"
+    },
+    {
+      "text": "L2 - Fused Operations",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/collection/2"
+    },
+    {
+      "text": "Quantization",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/collection/3"
+    },
+    {
+      "text": "View All →",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/problems"
+    },
+    {
+      "text": "020_vision_patch_merger_spatial_shuffle_mlp",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/20"
+    },
+    {
+      "text": "006_hyena_depthwise_conv1d_split_gate",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/6"
+    },
+    {
+      "text": "013_fused_residual_rms_norm_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/13"
+    },
+    {
+      "text": "008_expert_output_weighted_index_add_accumulation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/8"
+    },
+    {
+      "text": "010_attention_value_projection_with_transpose",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/10"
+    },
+    {
+      "text": "012_fused_cos_sin_embedding_generation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/12"
+    },
+    {
+      "text": "026_video_patch_embedding_projection",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/26"
+    },
+    {
+      "text": "031_repeat_kv_attention_matmul",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/31"
+    },
+    {
+      "text": "Full Rankings →",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard"
+    },
+    {
+      "text": "002_vae_conv3x3_groupnorm_silu_residual_fused",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/2/B200"
+    },
+    {
+      "text": "001_attention_softmax_dropout_value_matmul_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/1/B200"
+    },
+    {
+      "text": "023_video_latent_vae_encoder_downsampling",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/117/B200"
+    },
+    {
+      "text": "069_rms_norm",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/69/B200"
+    },
+    {
+      "text": "004_attention_output_projection_with_reshape_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/4/B200"
+    },
+    {
+      "text": "030_attention_output_projection_with_residual",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/30/B200"
+    },
+    {
+      "text": "003_lm_head_projection_with_logit_slicing",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/3/B200"
+    },
+    {
+      "text": "002_decoder_layer_full_block",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/96/B200"
+    },
+    {
+      "text": "001_fused_vision_multihead_attention_with_norms_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/95/B200"
+    },
+    {
+      "text": "012_fused_cos_sin_embedding_generation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/12/B200"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "Your Privacy Choices",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    },
+    {
+      "text": "Accessibility",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/accessibility/"
+    },
+    {
+      "text": "Corporate Policies",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/company-policies/"
+    },
+    {
+      "text": "Product Security",
+      "href": "https://www.nvidia.com/en-us/product-security/"
+    },
+    {
+      "text": "solexecbench@nvidia.com",
+      "href": "mailto:solexecbench@nvidia.com"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/cookie-policy/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/cookie-policy/"
+    },
+    {
+      "text": "NVIDIA Preference Center",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/cookie-policy/"
+    },
+    {
+      "text": "NVIDIA Preference Center",
+      "href": "https://www.nvidia.com/en-us/privacy-center/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/cookie-policy/"
+    },
+    {
+      "text": "NVIDIA Preference Center",
+      "href": "https://www.nvidia.com/en-us/privacy-center/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "NVIDIA Preference Center",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/cookie-policy/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "",
+      "href": "https://www.onetrust.com/solutions/consent-and-preferences/?utm_source=cmp&utm_medium=cmpbanner"
+    }
+  ]
+}

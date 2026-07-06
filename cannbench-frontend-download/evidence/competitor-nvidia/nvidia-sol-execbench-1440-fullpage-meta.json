@@ -1,0 +1,17 @@
+{
+  "url": "https://research.nvidia.com/benchmarks/sol-execbench",
+  "title": "SOL-ExecBench | GPU Kernel Performance Benchmarks by NVIDIA",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-07-04T16:20:28.125Z",
+  "stateNote": "Desktop full-page screenshot after scrolling for lazy-loaded content; cookie overlay rejected if present.",
+  "browserMetrics": {
+    "devicePixelRatio": 2,
+    "innerHeight": 900,
+    "innerWidth": 1440,
+    "scrollHeight": 3175
+  },
+  "screenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/evidence/competitor-nvidia/nvidia-sol-execbench-1440-fullpage.png"
+}

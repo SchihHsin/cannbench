@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态 - CANN-Bench</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="shell nav">
+        <a class="brand" href="./index.html"><span class="brand-mark">CB</span><span>CANN-Bench</span></a>
+        <div class="nav-main">
+          <a class="nav-link" href="./index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" /><path d="M5.5 10.5V20h13v-9.5" /><path d="M9.5 20v-5h5v5" /></svg>首页</a>
+          <a class="nav-link" href="./benchmarks.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h7v6H4z" /><path d="M13 5.5h7v6h-7z" /><path d="M4 13.5h7v5H4z" /><path d="M13 13.5h7v5h-7z" /></svg>任务包</a>
+          <a class="nav-link" href="./leaderboard.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9" /><path d="M12 19V5" /><path d="M19 19v-7" /><path d="M3 19h18" /></svg>排行榜</a>
+          <a class="nav-link is-active" href="./updates.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4" /></svg>动态</a>
+        </div>
+        <div class="nav-actions">
+          <a class="quick-action" href="./account.html#submit">提交算子</a>
+          <span class="runner-chip"><span class="led"></span>runner 在线</span>
+          <details class="account-menu">
+            <summary><span class="avatar">我</span><span>xchang1121</span></summary>
+            <div class="account-panel">
+              <a href="./account.html#jobs">运行记录 <span>→</span></a>
+              <a href="./account.html#tokens">API Token <span>→</span></a>
+              <div class="account-divider"></div>
+              <button type="button" data-action="language"><span>语言</span><span data-language-label>中文</span></button>
+              <button type="button" data-action="theme"><span>主题</span><span data-theme-label>浅色</span></button>
+              <button type="button" data-action="logout"><span>退出登录</span><span>→</span></button>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+
+    <main class="shell page">
+      <section class="section">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>动态</h2>
+            <span>查看任务版本、评测规则、runner 维护和平台发布记录。</span>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="cell">
+            <span class="tag">规则</span>
+            <h3>CANN Bench 介绍</h3>
+            <p>查看任务包、HAP 评分、正确性校验和结果适用范围。</p>
+          </article>
+          <article class="cell">
+            <span class="tag is-mint">榜单</span>
+            <h3>Micro Bench 与子集排行榜</h3>
+            <p>按 Level 或任务族查看结果，更容易找到可比较的提交。</p>
+          </article>
+          <article class="cell">
+            <span class="tag is-amber">维护</span>
+            <h3>Runner 维护窗口</h3>
+            <p>当评测队列暂停或硬件离线时，在这里查看影响范围和恢复时间。</p>
+          </article>
+        </div>
+        <div class="notice">
+          <strong>关注这些更新</strong>
+          <span>任务包版本、评分规则、硬件维护和提交额度变化会影响你的下一次提交。</span>
+        </div>
+      </section>
+    </main>
+    <script src="./settings.js"></script>
+  </body>
+</html>

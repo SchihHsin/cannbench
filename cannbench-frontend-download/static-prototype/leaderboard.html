@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>排行榜 - CANN-Bench</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="shell nav">
+        <a class="brand" href="./index.html"><span class="brand-mark">CB</span><span>CANN-Bench</span></a>
+        <div class="nav-main">
+          <a class="nav-link" href="./index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" /><path d="M5.5 10.5V20h13v-9.5" /><path d="M9.5 20v-5h5v5" /></svg>首页</a>
+          <a class="nav-link" href="./benchmarks.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h7v6H4z" /><path d="M13 5.5h7v6h-7z" /><path d="M4 13.5h7v5H4z" /><path d="M13 13.5h7v5h-7z" /></svg>任务包</a>
+          <a class="nav-link is-active" href="./leaderboard.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9" /><path d="M12 19V5" /><path d="M19 19v-7" /><path d="M3 19h18" /></svg>排行榜</a>
+          <a class="nav-link" href="./updates.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4" /></svg>动态</a>
+        </div>
+        <div class="nav-actions">
+          <a class="quick-action" href="./account.html#submit">提交算子</a>
+          <span class="runner-chip"><span class="led"></span>runner 在线</span>
+          <details class="account-menu">
+            <summary><span class="avatar">我</span><span>xchang1121</span></summary>
+            <div class="account-panel">
+              <a href="./account.html#jobs">运行记录 <span>→</span></a>
+              <a href="./account.html#tokens">API Token <span>→</span></a>
+              <div class="account-divider"></div>
+              <button type="button" data-action="language"><span>语言</span><span data-language-label>中文</span></button>
+              <button type="button" data-action="theme"><span>主题</span><span data-theme-label>浅色</span></button>
+              <button type="button" data-action="logout"><span>退出登录</span><span>→</span></button>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+
+    <main class="shell page">
+      <section class="section">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>排行榜</h2>
+            <span>按任务包、硬件和覆盖范围查看可比较的提交结果。</span>
+          </div>
+          <div class="actions">
+            <span class="tag">Official-Tasks</span>
+            <span class="tag">910C</span>
+            <a class="btn is-ghost" href="./benchmarks.html">选择任务</a>
+          </div>
+        </div>
+        <div class="band" style="margin:0;border:0;border-radius:0;">
+          <div class="metric"><b>Total Score</b><span>总体排名，不等于单算子最好</span></div>
+          <div class="metric"><b>OPS</b><span>覆盖算子越多，结果越可信</span></div>
+          <div class="metric"><b>Cases</b><span>先确认通过率，再看加速比</span></div>
+          <div class="metric"><b>Hardware</b><span>910C / 950PR 不混比</span></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>快速排名</h2>
+            <span>先看总分、硬件、覆盖算子和通过用例，再进入明细。</span>
+          </div>
+          <div class="actions">
+            <span class="tag is-mint">快速排名</span>
+            <span class="tag">单项明细</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>#</th><th>用户</th><th>总分</th><th>硬件</th><th>OPS</th><th>Cases</th><th>最近提交</th><th>可操作</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><strong>vINyLogY</strong></td><td><strong>2673.26</strong></td><td>910C</td><td>53 / 53</td><td>950 / 1060</td><td>2026-07-03</td><td><a class="btn is-ghost" href="./benchmarks.html">看任务</a></td></tr>
+              <tr><td>2</td><td><strong>lu-zhirui</strong></td><td><strong>891.65</strong></td><td>950PR</td><td>18 / 53</td><td>271 / 320</td><td>2026-07-03</td><td><a class="btn is-ghost" href="./account.html#submit">挑战</a></td></tr>
+              <tr><td>3</td><td><strong>xchang1121</strong></td><td><strong>56.71</strong></td><td>910C</td><td>1 / 53</td><td>20 / 20</td><td>2026-07-04</td><td><a class="btn is-ghost" href="./account.html#jobs">看日志</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="notice">
+          <strong>读榜提示</strong>
+          <span>只比较同任务包、同版本、同硬件的结果。若覆盖算子较少，建议先查看对应任务和运行日志。</span>
+        </div>
+      </section>
+    </main>
+    <script src="./settings.js"></script>
+  </body>
+</html>

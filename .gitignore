@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+*.pid
+*.zip
+
+cann-bench/
+cannbench-frontend-download/logs/
+cannbench-frontend-download/local-server.log

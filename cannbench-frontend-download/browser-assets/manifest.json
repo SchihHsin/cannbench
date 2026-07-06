@@ -1,0 +1,109 @@
+{
+  "assets": [
+    {
+      "contentType": "",
+      "id": "11ee9f4b3f5c229c",
+      "kind": "stylesheet",
+      "name": "css2",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/11ee9f4b3f5c229c",
+      "url": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap"
+    },
+    {
+      "contentType": "",
+      "id": "019a3448b59b1db7",
+      "kind": "stylesheet",
+      "name": "index-CsThEqRM.css",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/019a3448b59b1db7.css",
+      "url": "https://cannbench.com/assets/index-CsThEqRM.css"
+    },
+    {
+      "contentType": "image/png",
+      "id": "c56081477c52f941",
+      "kind": "image",
+      "name": "hero-cann-bench.png",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/c56081477c52f941.png",
+      "url": "https://cannbench.com/hero-cann-bench.png"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "190e3b35ba0cabf6",
+      "kind": "image",
+      "name": "svg-1",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/190e3b35ba0cabf6.svg",
+      "url": "inline-svg:190e3b35ba0cabf6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "92fc20f24ad575bd",
+      "kind": "image",
+      "name": "svg-2",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/92fc20f24ad575bd.svg",
+      "url": "inline-svg:92fc20f24ad575bd"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "9d1e690cb8ec29c6",
+      "kind": "image",
+      "name": "svg-3",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/9d1e690cb8ec29c6.svg",
+      "url": "inline-svg:9d1e690cb8ec29c6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "af399c4019c51241",
+      "kind": "image",
+      "name": "svg-4",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/af399c4019c51241.svg",
+      "url": "inline-svg:af399c4019c51241"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "cb19031ebb92d5c1",
+      "kind": "image",
+      "name": "svg-5",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/cb19031ebb92d5c1.svg",
+      "url": "inline-svg:cb19031ebb92d5c1"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "4f319f84b7e07284",
+      "kind": "image",
+      "name": "svg-6",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/4f319f84b7e07284.svg",
+      "url": "inline-svg:4f319f84b7e07284"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "f63e0a7de30a6a9d",
+      "kind": "image",
+      "name": "svg-7",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/f63e0a7de30a6a9d.svg",
+      "url": "inline-svg:f63e0a7de30a6a9d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7bbd999b716d07ca",
+      "kind": "image",
+      "name": "svg-8",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/7bbd999b716d07ca.svg",
+      "url": "inline-svg:7bbd999b716d07ca"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "9819e93ae66dc0cc",
+      "kind": "image",
+      "name": "svg-9",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/9819e93ae66dc0cc.svg",
+      "url": "inline-svg:9819e93ae66dc0cc"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "c4a0e81fda9e9e47",
+      "kind": "image",
+      "name": "svg-10",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/9ed92b80-80bb-4771-be61-d1e6f9e2c658/c4a0e81fda9e9e47.svg",
+      "url": "inline-svg:c4a0e81fda9e9e47"
+    }
+  ],
+  "failures": []
+}

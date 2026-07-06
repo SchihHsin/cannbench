@@ -1,0 +1,176 @@
+{
+  "name": "04-status",
+  "url": "https://research.nvidia.com/benchmarks/sol-execbench/status",
+  "title": "SOL-ExecBench | GPU Kernel Performance Benchmarks by NVIDIA",
+  "headings": [
+    "SOL-ExecBench"
+  ],
+  "visibleTexts": [
+    "© 2026 NVIDIA Corporation. All rights reserved.Privacy PolicyYour Privacy ChoicesTerms of ServiceAccessibilityCorporate PoliciesProduct SecurityContact: solexecbench@nvidia.com",
+    "Submission StatusLive feed of evaluation results.RefreshAuto: ON",
+    "SOL-ExecBenchBlogProblemsLeaderboardStatusGitHub ↗HuggingFace ↗Paper ↗Log In",
+    "Showing 1–20 of 2429Prev12...1221/122Next",
+    "IDTimeUserProblemDeviceStatus",
+    "#171652 hours agoAmir M. Mir | SF Tensor017_gqa_ragged_prefill_causal_h32_kv8_d128B200Accepted",
+    "#171632 hours agoimec.AILabs030_attention_output_projection_with_residualB200Accepted",
+    "#171602 hours agoimec.AILabs030_attention_output_projection_with_residualB200Failed",
+    "#171583 hours agoimec.AILabs030_attention_output_projection_with_residualB200Failed",
+    "#171554 hours agoAmir M. Mir | SF Tensor020_moe_fp8_block_scale_ds_routing_topk8_ng8_kg4_e32_h7168_i2048B200Accepted",
+    "#171437 hours agoAmir M. Mir | SF Tensor006_fp8_vision_attention_output_projectionB200Accepted",
+    "#171428 hours agoZerg AI075_grouped_query_self_attention_with_ropeB200Accepted",
+    "#171159 hours agoCoralCollection /FlashInfer-BenchB200Accepted",
+    "#171149 hours agoAmir M. Mir | SF Tensor077_whisper_decoder_output_projectionB200Accepted",
+    "#171139 hours agoStellar Flamingo020_moe_fp8_block_scale_ds_routing_topk8_ng8_kg4_e32_h7168_i2048B200Accepted",
+    "#171129 hours agoAmir M. Mir | SF Tensor043_mamba_chunk_scan_with_segsumB200Accepted",
+    "#1707714 hours agoCoral008_gemm_n4096_k14336B200Accepted",
+    "#1707614 hours agoCoral004_gemm_n128_k2048B200Accepted",
+    "#1707215 hours agoOpenKernels-Ruibo011_gemm_n28672_k4096B200Accepted",
+    "#1706916 hours agoDatabricks073_fused_encoder_final_norm_to_decoder_cross_attention_kv_projectionB200Accepted",
+    "#1706717 hours agoZerg AI056_mamba_ssm_dt_projection_softplus_clamp_backwardB200Accepted",
+    "#1706617 hours agoZerg AI054_audio_attention_qkv_projection_with_normalizationB200Accepted",
+    "#1706118 hours agoZerg AI050_attention_qkv_projection_with_bias_and_reshapeB200Accepted",
+    "#1706018 hours agoZerg AI034_flux_multi_axis_rope_frequency_computationB200Accepted",
+    "#1705919 hours agoDatabricks063_attention_output_reshape_and_projectionB200Accepted",
+    "Problem",
+    "017_gqa_ragged_prefill_causal_h32_kv8_d128",
+    "030_attention_output_projection_with_residual",
+    "020_moe_fp8_block_scale_ds_routing_topk8_ng8_kg4_e32_h7168_i2048",
+    "006_fp8_vision_attention_output_projection",
+    "075_grouped_query_self_attention_with_rope",
+    "Collection /FlashInfer-Bench",
+    "077_whisper_decoder_output_projection",
+    "043_mamba_chunk_scan_with_segsum",
+    "008_gemm_n4096_k14336",
+    "004_gemm_n128_k2048",
+    "011_gemm_n28672_k4096",
+    "073_fused_encoder_final_norm_to_decoder_cross_attention_kv_projection",
+    "056_mamba_ssm_dt_projection_softplus_clamp_backward",
+    "054_audio_attention_qkv_projection_with_normalization",
+    "050_attention_qkv_projection_with_bias_and_reshape",
+    "034_flux_multi_axis_rope_frequency_computation",
+    "063_attention_output_reshape_and_projection",
+    "Submission StatusLive feed of evaluation results.",
+    "Submission Status",
+    "SOL-ExecBenchBlogProblemsLeaderboardStatus",
+    "Showing 1–20 of 2429",
+    "Privacy PolicyYour Privacy ChoicesTerms of ServiceAccessibilityCorporate PoliciesProduct Security",
+    "GitHub ↗HuggingFace ↗Paper ↗Log In",
+    "BlogProblemsLeaderboardStatus",
+    "User",
+    "Amir M. Mir | SF Tensor",
+    "imec.AILabs",
+    "Zerg AI",
+    "Coral",
+    "Stellar Flamingo",
+    "OpenKernels-Ruibo",
+    "Databricks",
+    "Status",
+    "Accepted",
+    "Failed",
+    "Prev12...1221/122Next",
+    "Time",
+    "2 hours ago",
+    "3 hours ago",
+    "4 hours ago",
+    "7 hours ago",
+    "8 hours ago",
+    "9 hours ago",
+    "14 hours ago",
+    "15 hours ago",
+    "16 hours ago",
+    "17 hours ago",
+    "18 hours ago",
+    "19 hours ago",
+    "Live feed of evaluation results.",
+    "© 2026 NVIDIA Corporation. All rights reserved.",
+    "HuggingFace ↗",
+    "Contact: solexecbench@nvidia.com",
+    "Leaderboard"
+  ],
+  "links": [
+    {
+      "text": "SOL-ExecBench",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench"
+    },
+    {
+      "text": "Blog",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/blog"
+    },
+    {
+      "text": "Problems",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/problems"
+    },
+    {
+      "text": "Leaderboard",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard"
+    },
+    {
+      "text": "Status",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/status"
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/nvidia/sol-execbench"
+    },
+    {
+      "text": "HuggingFace ↗",
+      "href": "https://huggingface.co/datasets/nvidia/sol-execbench"
+    },
+    {
+      "text": "Paper ↗",
+      "href": "https://arxiv.org/abs/2603.19173"
+    },
+    {
+      "text": "Log In",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/login"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "Your Privacy Choices",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    },
+    {
+      "text": "Accessibility",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/accessibility/"
+    },
+    {
+      "text": "Corporate Policies",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/company-policies/"
+    },
+    {
+      "text": "Product Security",
+      "href": "https://www.nvidia.com/en-us/product-security/"
+    },
+    {
+      "text": "solexecbench@nvidia.com",
+      "href": "mailto:solexecbench@nvidia.com"
+    },
+    {
+      "text": "NVIDIA Preference Center",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/cookie-policy/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "",
+      "href": "https://www.onetrust.com/solutions/consent-and-preferences/?utm_source=cmp&utm_medium=cmpbanner"
+    }
+  ]
+}

@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CANN Bench 优化版原型</title>
+    <link rel="icon" href="./assets/favicon.svg" />
+    <style>
+      :root {
+        --bg: #eef2f6;
+        --surface: #ffffff;
+        --surface-2: #f6f9fc;
+        --ink: #101926;
+        --muted: #637083;
+        --line: #d7dee8;
+        --blue: #2f6fed;
+        --green: #13a273;
+        --amber: #c97912;
+        --red: #d34b4b;
+        --violet: #6c5ce7;
+        --shadow: 0 18px 45px rgba(18, 31, 50, 0.10);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          linear-gradient(180deg, #f8fbff 0, #eef2f6 360px, #eef2f6 100%);
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .shell {
+        width: min(1360px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.86);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(12px);
+      }
+
+      .topbar-inner {
+        min-height: 68px;
+        display: grid;
+        grid-template-columns: 210px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: inline-grid;
+        place-items: center;
+        background: #e9f7f1;
+        color: var(--green);
+        border: 1px solid #b8ebd8;
+        box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.7);
+        font-size: 17px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        min-width: 0;
+        overflow-x: auto;
+      }
+
+      .nav a {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 12px;
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 7px;
+        border-bottom: 0;
+        white-space: nowrap;
+      }
+
+      .nav a.active,
+      .nav a:hover {
+        color: var(--ink);
+        background: #eef7f3;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .status-chip {
+        min-height: 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 10px;
+        border: 1px solid #b8ebd8;
+        background: #edf9f4;
+        color: #116b51;
+        font-size: 13px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .user-chip {
+        min-height: 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 10px;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .hero {
+        padding: 30px 0 20px;
+      }
+
+      .hero-panel {
+        min-height: 500px;
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.72fr);
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .hero-main {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background:
+          linear-gradient(90deg, rgba(8, 18, 31, 0.92), rgba(18, 33, 52, 0.72) 48%, rgba(18, 33, 52, 0.18)),
+          url("./assets/hero-cann-bench.png") center / cover no-repeat;
+        color: #fff;
+        padding: 46px;
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #cbe6ff;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 34px;
+        height: 3px;
+        background: #4fc08d;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 22px 0 14px;
+        font-size: 52px;
+        line-height: 1.12;
+      }
+
+      .hero-copy {
+        max-width: 720px;
+        margin: 0;
+        color: #edf5ff;
+        font-size: 18px;
+        line-height: 1.75;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        min-height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        padding: 0 16px;
+        font-weight: 800;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      }
+
+      .btn:hover,
+      .resource-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 22px rgba(18, 31, 50, 0.10);
+      }
+
+      .btn.primary {
+        border-color: #1b7c5c;
+        background: var(--green);
+        color: #fff;
+      }
+
+      .btn.dark {
+        border-color: rgba(255, 255, 255, 0.36);
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+      }
+
+      .btn.warning {
+        border-color: #efc886;
+        background: #fff7e9;
+        color: #87500b;
+      }
+
+      .btn.ghost {
+        background: transparent;
+      }
+
+      .trust-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .trust-item {
+        min-height: 74px;
+        padding: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        backdrop-filter: blur(8px);
+      }
+
+      .trust-item strong {
+        display: block;
+        font-size: 22px;
+      }
+
+      .trust-item span {
+        display: block;
+        margin-top: 4px;
+        color: #d8e6f4;
+        font-size: 13px;
+      }
+
+      .starter {
+        border: 1px solid rgba(215, 222, 232, 0.9);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 24px;
+        border-radius: 14px;
+      }
+
+      .panel-title {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .panel-title h2,
+      .section-title h2 {
+        margin: 0;
+        font-size: 24px;
+        line-height: 1.25;
+      }
+
+      .panel-title p,
+      .section-title p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .step-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+        padding: 15px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, #fff, #f7fafc);
+        border-radius: 10px;
+      }
+
+      .step-number {
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        background: #eaf2ff;
+        color: var(--blue);
+        font-weight: 900;
+        border-radius: 8px;
+      }
+
+      .step-card b {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .step-card small {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .section {
+        padding: 44px 0;
+      }
+
+      .section-title {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) auto;
+        gap: 22px;
+        align-items: end;
+        margin-bottom: 18px;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .search,
+      .select {
+        min-height: 40px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 0 12px;
+        color: var(--ink);
+        border-radius: 8px;
+      }
+
+      .search {
+        min-width: 260px;
+      }
+
+      .benchmark-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .benchmark-card,
+      .submit-card,
+      .job-card,
+      .leader-card,
+      .status-card {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        box-shadow: 0 10px 28px rgba(18, 31, 50, 0.06);
+        border-radius: 12px;
+      }
+
+      .benchmark-card {
+        padding: 20px;
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .card-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .badge {
+        min-height: 24px;
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        border-radius: 999px;
+      }
+
+      .badge.green {
+        color: #126a50;
+        background: #eaf8f2;
+        border-color: #bde8d7;
+      }
+
+      .badge.blue {
+        color: #1d5199;
+        background: #edf4ff;
+        border-color: #bdd5ff;
+      }
+
+      .badge.amber {
+        color: #87500b;
+        background: #fff5e4;
+        border-color: #edc17e;
+      }
+
+      .badge.red {
+        color: #9d2c2c;
+        background: #fff0ef;
+        border-color: #f2b8b5;
+      }
+
+      .benchmark-card h3 {
+        margin: 0;
+        font-size: 22px;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .resource-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: auto;
+      }
+
+      .resource-btn {
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 800;
+        border-radius: 8px;
+      }
+
+      .workflow-grid {
+        display: grid;
+        grid-template-columns: minmax(360px, 0.8fr) minmax(0, 1.2fr);
+        gap: 16px;
+      }
+
+      .submit-card {
+        padding: 20px;
+      }
+
+      .form-steps {
+        display: grid;
+        gap: 12px;
+      }
+
+      .form-step {
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .form-step.done {
+        border-color: #bde8d7;
+        background: #f3fbf7;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .field {
+        min-height: 40px;
+        width: 100%;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 0 10px;
+        border-radius: 8px;
+      }
+
+      .upload-box {
+        min-height: 150px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        border: 2px dashed #b7c4d3;
+        background: #fff;
+        padding: 18px;
+        margin-top: 10px;
+        border-radius: 12px;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .check-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 9px 10px;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--muted);
+        font-size: 13px;
+        border-radius: 8px;
+      }
+
+      .jobs-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 0.7fr);
+        gap: 16px;
+      }
+
+      .job-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .job-table th,
+      .job-table td {
+        border-bottom: 1px solid var(--line);
+        padding: 14px 14px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 14px;
+      }
+
+      .job-table th {
+        color: var(--muted);
+        background: #f6f8fb;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .job-card {
+        overflow: hidden;
+      }
+
+      .job-card-header {
+        padding: 16px;
+        border-bottom: 1px solid var(--line);
+        background: var(--surface);
+      }
+
+      .diagnosis {
+        padding: 16px;
+      }
+
+      .stage {
+        padding: 12px;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+
+      .stage strong {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .leader-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(380px, 0.72fr);
+        gap: 16px;
+      }
+
+      .leader-card {
+        padding: 20px;
+      }
+
+      .score-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+      }
+
+      .score-table th,
+      .score-table td {
+        border-bottom: 1px solid var(--line);
+        padding: 12px 8px;
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .explain-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .explain-item {
+        border-left: 4px solid var(--blue);
+        background: #f1f6ff;
+        padding: 12px;
+        line-height: 1.65;
+        border-radius: 8px;
+      }
+
+      .status-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .status-card {
+        padding: 18px;
+        min-height: 160px;
+      }
+
+      .status-card h3 {
+        margin: 0 0 10px;
+      }
+
+      .feed {
+        display: grid;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .feed-item {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr) auto;
+        gap: 12px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 12px;
+        align-items: center;
+        border-radius: 10px;
+      }
+
+      .admin-band {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .admin-item {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 18px;
+        min-height: 150px;
+        border-radius: 12px;
+      }
+
+      .maintainer-link {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border: 1px dashed #b8c4d3;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--muted);
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .footer {
+        padding: 34px 0 46px;
+        color: var(--muted);
+      }
+
+      .hide {
+        display: none !important;
+      }
+
+      @media (max-width: 1100px) {
+        .hero-panel,
+        .workflow-grid,
+        .jobs-grid,
+        .leader-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .benchmark-grid,
+        .status-grid,
+        .admin-band {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .topbar-inner {
+          grid-template-columns: 1fr;
+          padding: 12px 0;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .shell {
+          width: min(100% - 24px, 1440px);
+        }
+
+        h1 {
+          font-size: 34px;
+        }
+
+        .hero-main {
+          padding: 26px;
+        }
+
+        .benchmark-grid,
+        .status-grid,
+        .admin-band,
+        .field-grid,
+        .trust-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          grid-template-columns: 1fr;
+        }
+
+        .toolbar {
+          justify-content: stretch;
+        }
+
+        .search,
+        .select {
+          width: 100%;
+        }
+
+        .feed-item {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="#home" aria-label="CANN Bench">
+          <span class="brand-mark">⌁</span>
+          <span>CANN Bench</span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a class="active" href="#home">概览</a>
+          <a href="#benchmarks">评测集</a>
+          <a href="#submit">提交</a>
+          <a href="#jobs">任务</a>
+          <a href="#leaderboard">排行榜</a>
+          <a href="#status">状态</a>
+        </nav>
+        <div class="actions">
+          <span class="status-chip">● 910C / 950PR 在线</span>
+          <span class="user-chip">gcw_MYW56D5P</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="shell hero-panel">
+          <div class="hero-main">
+            <div>
+              <span class="eyebrow">真实硬件 · 真实算子 · 公开口径</span>
+              <h1>昇腾算子公开评测工作台</h1>
+              <p class="hero-copy">选择任务包，基于模板实现算子，提交到真实昇腾硬件评测，并用日志与排行榜持续迭代结果。</p>
+              <div class="hero-actions">
+                <a class="btn primary" href="#submit">开始一次提交</a>
+                <a class="btn dark" href="#benchmarks">浏览评测集</a>
+                <a class="btn dark" href="#leaderboard">查看排行榜</a>
+              </div>
+            </div>
+            <div class="trust-strip">
+              <div class="trust-item"><strong>2</strong><span>公开评测集</span></div>
+              <div class="trust-item"><strong>312</strong><span>算子与用例组合</span></div>
+              <div class="trust-item"><strong>14,820</strong><span>累计提交</span></div>
+              <div class="trust-item"><strong>18 分钟</strong><span>预计排队</span></div>
+            </div>
+          </div>
+
+          <aside class="starter" aria-label="首次提交路径">
+            <div class="panel-title">
+              <div>
+                <h2>首次提交路径</h2>
+                <p>按这个顺序完成一次提交。</p>
+              </div>
+              <span class="badge green">推荐</span>
+            </div>
+            <div class="step-list">
+              <a class="step-card" href="#benchmarks">
+                <span class="step-number">1</span>
+                <span><b>选择评测集</b><small>确认 Official-Tasks、Kernel Bench、Level 与目标硬件。</small></span>
+                <span class="badge">进入</span>
+              </a>
+              <a class="step-card" href="#benchmarks">
+                <span class="step-number">2</span>
+                <span><b>下载任务包与模板</b><small>拿到 bundle、reference、API 描述和 cases.yaml。</small></span>
+                <span class="badge">下载</span>
+              </a>
+              <a class="step-card" href="#submit">
+                <span class="step-number">3</span>
+                <span><b>上传 zip 并校验</b><small>检查目录结构，再选择硬件和展示标签。</small></span>
+                <span class="badge">校验</span>
+              </a>
+              <a class="step-card" href="#jobs">
+                <span class="step-number">4</span>
+                <span><b>查看任务与修复</b><small>按构建、精度、性能定位失败原因。</small></span>
+                <span class="badge">诊断</span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="benchmarks">
+        <div class="shell">
+          <div class="section-title">
+            <div>
+              <h2>评测集 · 任务包中心</h2>
+              <p>每个评测集都聚合任务包、模板、API、用例和排行榜入口。</p>
+            </div>
+            <div class="toolbar">
+              <input class="search" placeholder="搜索算子、Level、tag" />
+              <select class="select" aria-label="筛选硬件">
+                <option>全部硬件</option>
+                <option>910C</option>
+                <option>950PR</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="benchmark-grid">
+            <article class="benchmark-card">
+              <div class="card-top">
+                <span class="badge green">用于排行榜</span>
+                <span class="badge">v0.3.0</span>
+              </div>
+              <h3>Official-Tasks</h3>
+              <p>公开官方任务，覆盖 Level 1-4。适合第一次提交和排行榜冲榜。</p>
+              <div class="meta-row"><span>96 算子</span><span>1,280 cases</span><span>910C / 950PR</span></div>
+              <div class="resource-actions">
+                <a class="resource-btn" href="#submit">下载任务包</a>
+                <a class="resource-btn" href="#submit">查看模板</a>
+                <a class="resource-btn" href="#submit">API 描述</a>
+                <a class="resource-btn" href="#leaderboard">进入排行榜</a>
+              </div>
+            </article>
+
+            <article class="benchmark-card">
+              <div class="card-top">
+                <span class="badge blue">练习任务</span>
+                <span class="badge">v0.2.1</span>
+              </div>
+              <h3>Kernel Bench</h3>
+              <p>细粒度 kernel 练习集合，适合验证模板结构和自动化提交脚本。</p>
+              <div class="meta-row"><span>216 kernel</span><span>840 cases</span><span>910C</span></div>
+              <div class="resource-actions">
+                <a class="resource-btn" href="#submit">下载任务包</a>
+                <a class="resource-btn" href="#submit">查看模板</a>
+                <a class="resource-btn" href="#submit">参考实现</a>
+                <a class="resource-btn" href="#jobs">查看任务</a>
+              </div>
+            </article>
+
+            <article class="benchmark-card">
+              <div class="card-top">
+                <span class="badge amber">隐藏集说明</span>
+                <span class="badge">next</span>
+              </div>
+              <h3>Hidden Cases</h3>
+              <p>隐藏用例不开放下载，但会影响最终榜单。提交前先了解计分口径和覆盖要求。</p>
+              <div class="meta-row"><span>计分说明</span><span>榜单口径</span><span>覆盖要求</span></div>
+              <div class="resource-actions">
+                <a class="resource-btn" href="#leaderboard">计分口径</a>
+                <a class="resource-btn" href="#leaderboard">隐藏集规则</a>
+                <a class="resource-btn" href="#status">Runner 状态</a>
+                <a class="resource-btn" href="#jobs">提交记录</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="submit">
+        <div class="shell">
+          <div class="section-title">
+            <div>
+              <h2>提交 · 分步表单</h2>
+              <p>按评测集、模板、zip、硬件和展示信息逐步完成提交。</p>
+            </div>
+            <a class="btn ghost" href="#jobs">查看我的任务</a>
+          </div>
+
+          <div class="workflow-grid">
+            <article class="submit-card">
+              <div class="panel-title">
+                <div>
+                  <h2>网页提交</h2>
+                  <p>提交按钮会明确显示当前阻塞原因。</p>
+                </div>
+                <span class="badge green">额度 999</span>
+              </div>
+              <div class="form-steps">
+                <div class="form-step done">
+                  <b>1. 选择评测集与硬件</b>
+                  <div class="field-grid">
+                    <select class="field"><option>Official-Tasks v0.3.0</option><option>Kernel Bench v0.2.1</option></select>
+                    <select class="field"><option>910C 在线</option><option>950PR 在线</option></select>
+                  </div>
+                </div>
+                <div class="form-step">
+                  <b>2. 还没有 zip？先拿模板</b>
+                  <div class="field-grid">
+                    <button class="btn">ACLNN Launch 模板</button>
+                    <button class="btn">Direct Launch 模板</button>
+                  </div>
+                </div>
+                <div class="form-step">
+                  <b>3. 上传并校验 zip</b>
+                  <div class="upload-box">
+                    <div>
+                      <strong>拖入 submission.zip</strong>
+                      <p>最大 50 MB，上传后自动检查目录结构。</p>
+                      <button class="btn primary">选择文件</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-step">
+                  <b>4. 展示信息</b>
+                  <div class="field-grid">
+                    <input class="field" value="ForeachAddcdivScalar 优化" />
+                    <input class="field" value="team-alpha" />
+                  </div>
+                </div>
+                <button class="btn warning">请先上传 zip</button>
+              </div>
+            </article>
+
+            <aside class="submit-card">
+              <div class="panel-title">
+                <div>
+                  <h2>提交前检查</h2>
+                  <p>把原来的结构预览变成可判断的清单。</p>
+                </div>
+                <span class="badge amber">等待文件</span>
+              </div>
+              <div class="checklist">
+                <div class="check-item"><span>根目录包含 build.sh</span><strong>待检查</strong></div>
+                <div class="check-item"><span>包含 CMakeLists.txt 或 setup.py</span><strong>待检查</strong></div>
+                <div class="check-item"><span>包含 cann_bench/ 与 csrc/</span><strong>待检查</strong></div>
+                <div class="check-item"><span>cases.yaml 与 benchmark 版本匹配</span><strong>待检查</strong></div>
+              </div>
+              <div class="explain-item" style="margin-top: 16px;">
+                CLI 自动化提交被放进折叠辅助区。Token 从账号页生成后，下一步直接给出复制脚本、回到提交页、查看任务。
+              </div>
+              <div class="field-grid" style="margin-top: 14px;">
+                <button class="btn">使用 CLI 提交</button>
+                <button class="btn">复制重提命令</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="jobs">
+        <div class="shell">
+          <div class="section-title">
+            <div>
+              <h2>任务 · 诊断工作台</h2>
+              <p>任务页不只是状态列表，而是告诉用户失败后下一步修哪里。</p>
+            </div>
+            <div class="toolbar">
+              <button class="btn primary">我的任务</button>
+              <button class="btn">全部任务</button>
+              <select class="select"><option>失败优先</option><option>最近提交</option><option>分数最高</option></select>
+            </div>
+          </div>
+
+          <div class="jobs-grid">
+            <article class="job-card">
+              <div class="job-card-header">
+                <strong>任务列表</strong>
+              </div>
+              <table class="job-table">
+                <thead>
+                  <tr><th>任务</th><th>状态</th><th>诊断摘要</th><th>下一步</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>job_b24ced66c522</b><br /><span class="meta-row">Official-Tasks · 910C · 12:50</span></td>
+                    <td><span class="badge red">编译失败</span></td>
+                    <td>首个错误：CMake 找不到 aclnn_ops.h</td>
+                    <td><button class="btn">查看日志</button></td>
+                  </tr>
+                  <tr>
+                    <td><b>job_4603ea2e77c8</b><br /><span class="meta-row">Official-Tasks · 910C · 14:20</span></td>
+                    <td><span class="badge amber">部分通过</span></td>
+                    <td>0 / 340 cases，通过率影响排行榜</td>
+                    <td><button class="btn">下载产物</button></td>
+                  </tr>
+                  <tr>
+                    <td><b>job_d9ea7b342c96</b><br /><span class="meta-row">UnsortedSegmentSum · 910C</span></td>
+                    <td><span class="badge green">成功</span></td>
+                    <td>20 / 20 cases，已计入公开榜</td>
+                    <td><button class="btn">看排名</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+
+            <aside class="job-card">
+              <div class="job-card-header">
+                <strong>job_b24ced66c522 下一步建议</strong>
+              </div>
+              <div class="diagnosis">
+                <div class="stage"><strong>构建 <span class="badge red">失败</span></strong><p>先查看 compile.log，确认 CANN 路径和 CMake 变量。</p></div>
+                <div class="stage"><strong>精度 <span class="badge">未开始</span></strong><p>构建失败后不会进入精度验证。</p></div>
+                <div class="stage"><strong>性能 <span class="badge">未开始</span></strong><p>修复编译后再重提。</p></div>
+                <div class="field-grid">
+                  <button class="btn primary">查看日志</button>
+                  <button class="btn">复制重提命令</button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="leaderboard">
+        <div class="shell">
+          <div class="section-title">
+            <div>
+              <h2>排行榜 · 快速看排名 / 深入分析</h2>
+              <p>把竞品的分层思路迁移过来，同时解决 CANN Bench 多指标解释成本高的问题。</p>
+            </div>
+            <div class="toolbar">
+              <button class="btn primary">快速排名</button>
+              <button class="btn">深入分析</button>
+            </div>
+          </div>
+
+          <div class="leader-grid">
+            <article class="leader-card">
+              <h3>Official-Tasks · 910C</h3>
+              <table class="score-table">
+                <thead><tr><th>#</th><th>团队</th><th>总分</th><th>提交算子</th><th>通过率</th><th>最近更新</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>vINyLogY</td><td>1,245.3</td><td>42</td><td>92%</td><td>11:12</td></tr>
+                  <tr><td>2</td><td>lu-zhirui</td><td>891.6</td><td>31</td><td>84%</td><td>10:05</td></tr>
+                  <tr><td>3</td><td>xchang1121</td><td>438.7</td><td>18</td><td>67%</td><td>14:20</td></tr>
+                </tbody>
+              </table>
+            </article>
+
+            <aside class="leader-card">
+              <h3>排行榜怎么看</h3>
+              <div class="explain-list">
+                <div class="explain-item"><b>总分</b>：标准用例和隐藏用例共同决定，不只看单次提交。</div>
+                <div class="explain-item"><b>团队聚合码</b>：同一团队按每个算子的历史最好成绩聚合。</div>
+                <div class="explain-item"><b>提交算子数</b>：完整度很重要，总分高但覆盖少需要谨慎比较。</div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="status">
+        <div class="shell">
+          <div class="section-title">
+            <div>
+              <h2>状态 · Runner 与实时提交</h2>
+              <p>查看 Runner 在线情况、排队时间、提交策略和最近任务状态。</p>
+            </div>
+            <button class="btn">自动刷新：开</button>
+          </div>
+
+          <div class="status-grid">
+            <article class="status-card"><h3>910C Runner</h3><span class="badge green">在线</span><p>2 个任务运行中，预计排队 18 分钟。</p></article>
+            <article class="status-card"><h3>950PR Runner</h3><span class="badge green">在线</span><p>1 个任务运行中，维护窗口 23:00。</p></article>
+            <article class="status-card"><h3>提交额度</h3><span class="badge blue">20 / 天</span><p>今日剩余 18 次，失败任务不占隐藏榜刷新额度。</p></article>
+            <article class="status-card"><h3>最近动态</h3><span class="badge amber">v0.3.0</span><p>Official-Tasks 更新隐藏用例说明。</p></article>
+          </div>
+
+          <div class="feed">
+            <div class="feed-item"><span>2 分钟前</span><strong>xchang1121 · ForeachAddcdivScalar</strong><span class="badge red">编译失败</span></div>
+            <div class="feed-item"><span>9 分钟前</span><strong>vINyLogY · UnsortedSegmentSum</strong><span class="badge green">成功</span></div>
+            <div class="feed-item"><span>14 分钟前</span><strong>lu-zhirui · ApplyAdamW</strong><span class="badge amber">部分通过</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="admin">
+        <div class="shell">
+          <div class="section-title">
+            <div>
+              <h2>维护者入口</h2>
+              <p>普通用户默认不进入后台；维护者登录后可展开管理工作台。</p>
+            </div>
+          </div>
+          <div class="maintainer-link">
+            <span>当前页面以参赛用户视角展示。维护者可以进入后台管理评测包、配额、Runner 和安全报告。</span>
+            <button class="btn">进入后台</button>
+          </div>
+          <div class="admin-band">
+            <article class="admin-item"><h3>日常监控</h3><p>Runner、任务队列、失败率、最新提交。</p></article>
+            <article class="admin-item"><h3>内容配置</h3><p>评测包、子集、版本动态、默认评测集。</p></article>
+            <article class="admin-item"><h3>权限安全</h3><p>用户角色、配额、Token、安全报告。</p></article>
+            <article class="admin-item"><h3>高风险维护</h3><p>维护模式、删除任务、刷新分数需二次确认和记录。</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">CANN Bench 中文工作台原型 · 任务包、提交、诊断和排行榜闭环。</div>
+    </footer>
+  </body>
+</html>

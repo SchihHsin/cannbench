@@ -1,0 +1,23 @@
+{
+  "url": "http://localhost:4173/",
+  "title": "CANN-Bench",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "capturedAt": "2026-07-04T17:01:59.965Z",
+  "browserMetrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "clientWidth": 1440,
+    "documentScrollWidth": 1440,
+    "bodyScrollWidth": 1440,
+    "scrollHeight": 1739,
+    "horizontalOverflow": false,
+    "visibleCookieText": false
+  },
+  "screenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/evidence/old-site-enhanced/01-home-after-1440-full.png",
+  "stateNote": "Captured by optional Playwright batch script. For logged-in pages, prefer in-app browser capture."
+}

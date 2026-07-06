@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>任务包 - CANN-Bench</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="shell nav">
+        <a class="brand" href="./index.html"><span class="brand-mark">CB</span><span>CANN-Bench</span></a>
+        <div class="nav-main">
+          <a class="nav-link" href="./index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" /><path d="M5.5 10.5V20h13v-9.5" /><path d="M9.5 20v-5h5v5" /></svg>首页</a>
+          <a class="nav-link is-active" href="./benchmarks.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h7v6H4z" /><path d="M13 5.5h7v6h-7z" /><path d="M4 13.5h7v5H4z" /><path d="M13 13.5h7v5h-7z" /></svg>任务包</a>
+          <a class="nav-link" href="./leaderboard.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9" /><path d="M12 19V5" /><path d="M19 19v-7" /><path d="M3 19h18" /></svg>排行榜</a>
+          <a class="nav-link" href="./updates.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4" /></svg>动态</a>
+        </div>
+        <div class="nav-actions">
+          <a class="quick-action" href="./account.html#submit">提交算子</a>
+          <span class="runner-chip"><span class="led"></span>runner 在线</span>
+          <details class="account-menu">
+            <summary><span class="avatar">我</span><span>xchang1121</span></summary>
+            <div class="account-panel">
+              <a href="./account.html#jobs">运行记录 <span>→</span></a>
+              <a href="./account.html#tokens">API Token <span>→</span></a>
+              <div class="account-divider"></div>
+              <button type="button" data-action="language"><span>语言</span><span data-language-label>中文</span></button>
+              <button type="button" data-action="theme"><span>主题</span><span data-theme-label>浅色</span></button>
+              <button type="button" data-action="logout"><span>退出登录</span><span>→</span></button>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+
+    <main class="shell page">
+      <section class="section">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>Official-Tasks v0.3.0</h2>
+            <span>查看任务范围、模板、API 描述和对应榜单。</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="./account.html#submit">提交算子</a>
+            <a class="btn is-ghost" href="./leaderboard.html">看对应榜单</a>
+          </div>
+        </div>
+        <div class="grid-4">
+          <a class="cell" id="spec" href="#spec"><span class="tag">Spec</span><h3>任务概览</h3><p>版本、Level、算子范围、评分权重、是否计入公开榜。</p></a>
+          <a class="cell" id="template" href="#template"><span class="tag is-mint">Template</span><h3>提交模板</h3><p>目录结构、CMake、metadata、示例 kernel 和 zip 规范。</p></a>
+          <a class="cell" id="api" href="#api"><span class="tag">API</span><h3>API 详情</h3><p>输入输出、dtype、shape、attrs、容差和 baseline 信息。</p></a>
+          <a class="cell" href="./leaderboard.html"><span class="tag is-amber">Rank</span><h3>对应榜单</h3><p>提交后按任务、硬件、版本比较，不混看不同口径。</p></a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>按 Level 选择任务</h2>
+            <span>先按难度选择 Level，再进入具体算子。</span>
+          </div>
+        </div>
+        <div class="grid-4">
+          <div class="cell" id="level1"><span class="tag is-mint">L1 · 8 ops</span><h3>跑通流程</h3><p>Exp、Gelu、Sigmoid、SwiGlu。目标是先确认目录、编译、case 通过。</p></div>
+          <div class="cell" id="level2"><span class="tag">L2 · 20 ops</span><h3>优化常用算子</h3><p>ApplyAdamW、ApplyRotaryPosEmb、DynamicQuant。开始关注融合和访存。</p></div>
+          <div class="cell" id="level3"><span class="tag is-amber">L3 · 18 ops</span><h3>复杂 shape</h3><p>ResizeBilinear、UnsortedSegmentSum。需要更认真看 case 和 baseline。</p></div>
+          <div class="cell" id="level4"><span class="tag">L4 · 7 ops</span><h3>高阶工作负载</h3><p>PagedAttention 等服务型任务，适合稳定提交后冲榜。</p></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>任务列表</h2>
+            <span>选择算子后，可以直接用对应任务包模板提交。</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>Level</th><th>算子</th><th>类别</th><th>Cases</th><th>建议动作</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="tag is-mint">L1</span></td><td><strong>Exp</strong></td><td>Elementwise</td><td>20</td><td><a class="btn is-ghost" href="./account.html#submit">用模板提交</a></td></tr>
+              <tr><td><span class="tag is-mint">L1</span></td><td><strong>SwiGlu</strong></td><td>Elementwise</td><td>20</td><td><a class="btn is-ghost" href="./account.html#submit">用模板提交</a></td></tr>
+              <tr><td><span class="tag">L2</span></td><td><strong>ApplyRotaryPosEmb</strong></td><td>FusedComposite</td><td>20</td><td><a class="btn is-ghost" href="./account.html#submit">用模板提交</a></td></tr>
+              <tr><td><span class="tag is-amber">L3</span></td><td><strong>UnsortedSegmentSum</strong></td><td>Reduction</td><td>20</td><td><a class="btn is-ghost" href="./leaderboard.html">先看榜单</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="notice">
+          <strong>提交前确认</strong>
+          <span>请确认任务包版本、硬件目标和 zip 根目录结构。提交后可在运行记录中查看编译、正确性和性能日志。</span>
+        </div>
+      </section>
+    </main>
+    <script src="./settings.js"></script>
+  </body>
+</html>

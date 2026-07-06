@@ -1,0 +1,219 @@
+- banner:
+  - link "SOL-ExecBench":
+    - /url: /benchmarks/sol-execbench
+    - generic: SOL-ExecBench
+  - navigation:
+    - link "Blog":
+      - /url: /benchmarks/sol-execbench/blog
+    - link "Problems":
+      - /url: /benchmarks/sol-execbench/problems
+    - link "Leaderboard":
+      - /url: /benchmarks/sol-execbench/leaderboard
+    - link "Status":
+      - /url: /benchmarks/sol-execbench/status
+  - link "GitHub ↗":
+    - /url: https://github.com/nvidia/sol-execbench
+    - text: GitHub
+    - generic: ↗
+  - link "HuggingFace ↗":
+    - /url: https://huggingface.co/datasets/nvidia/sol-execbench
+    - text: HuggingFace
+    - generic: ↗
+  - link "Paper ↗":
+    - /url: https://arxiv.org/abs/2603.19173
+    - text: Paper
+    - generic: ↗
+  - button "Toggle theme":
+  - link "Log In":
+    - /url: /benchmarks/sol-execbench/login
+- main:
+  - generic: SOL-ExecBench
+  - generic: Benchmark Real-World GPU Kernels Against Hardware Limits
+  - generic: Submit your optimized GPU kernels. Get your SOL Score on B200 hardware. Compete on the global leaderboard.
+  - link "Explore Problems":
+    - /url: /benchmarks/sol-execbench/problems
+  - link "View Leaderboard":
+    - /url: /benchmarks/sol-execbench/leaderboard
+  - generic: "235"
+  - generic: Active Problems
+  - generic: "4"
+  - generic: Collections
+  - generic: 10,540
+  - generic: Total Submissions
+  - generic: "352"
+  - generic: Developers
+  - generic: Why SOL-ExecBench?
+  - generic: Real Hardware
+  - generic: Every submission runs on NVIDIA B200 GPUs. No simulations, no estimates, just real execution on real silicon.
+  - generic: Real Kernels
+  - generic: Kernels extracted from production LLM inference and training workloads. Optimize what actually matters.
+  - generic: Real Limits
+  - generic: Scored against the hardware's speed-of-light. See exactly how close your kernel gets to peak throughput.
+  - generic: Collections
+  - link "View All →":
+    - /url: /benchmarks/sol-execbench/problems
+  - generic: "Collection #1"
+  - generic: B200
+  - link "L1 - Single Operations":
+    - /url: /benchmarks/sol-execbench/collection/1
+  - generic: 94 problems
+  - generic: 8625 submissions
+  - img "1st place": "1"
+  - generic: Amir M. Mir | SF Tensor
+  - generic: 94/94 solved
+  - generic: "Collection #2"
+  - generic: B200
+  - link "L2 - Fused Operations":
+    - /url: /benchmarks/sol-execbench/collection/2
+  - generic: 82 problems
+  - generic: 4474 submissions
+  - img "1st place": "1"
+  - generic: Cursor
+  - generic: 82/82 solved
+  - generic: "Collection #3"
+  - generic: B200
+  - link "Quantization":
+    - /url: /benchmarks/sol-execbench/collection/3
+  - generic: 33 problems
+  - generic: 1752 submissions
+  - img "1st place": "1"
+  - generic: Cursor
+  - generic: 33/33 solved
+  - generic: Kernels
+  - link "View All →":
+    - /url: /benchmarks/sol-execbench/problems
+  - link "020_vision_patch_merger_spatial_shuffle_mlp":
+    - /url: /benchmarks/sol-execbench/kernel/20
+  - generic: B200
+  - link "006_hyena_depthwise_conv1d_split_gate":
+    - /url: /benchmarks/sol-execbench/kernel/6
+  - generic: B200
+  - link "013_fused_residual_rms_norm_backward":
+    - /url: /benchmarks/sol-execbench/kernel/13
+  - generic: B200
+  - link "008_expert_output_weighted_index_add_accumulation":
+    - /url: /benchmarks/sol-execbench/kernel/8
+  - generic: B200
+  - link "010_attention_value_projection_with_transpose":
+    - /url: /benchmarks/sol-execbench/kernel/10
+  - generic: B200
+  - link "012_fused_cos_sin_embedding_generation":
+    - /url: /benchmarks/sol-execbench/kernel/12
+  - generic: B200
+  - link "026_video_patch_embedding_projection":
+    - /url: /benchmarks/sol-execbench/kernel/26
+  - generic: B200
+  - link "031_repeat_kv_attention_matmul":
+    - /url: /benchmarks/sol-execbench/kernel/31
+  - generic: B200
+  - generic: Leaderboard
+  - link "Full Rankings →":
+    - /url: /benchmarks/sol-execbench/leaderboard
+  - table:
+    - rowgroup:
+      - 'row "Kernel Device #1 Holder SOL Score"':
+        - columnheader "Kernel"
+        - columnheader "Device"
+        - columnheader "#1 Holder"
+        - columnheader "SOL Score"
+    - rowgroup:
+      - row "002_vae_conv3x3_groupnorm_silu_residual_fused B200 Databricks 0.722866":
+        - cell "002_vae_conv3x3_groupnorm_silu_residual_fused":
+          - link "002_vae_conv3x3_groupnorm_silu_residual_fused":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/2/B200
+        - cell "B200":
+          - generic: B200
+        - cell "Databricks"
+        - cell "0.722866"
+      - row "001_attention_softmax_dropout_value_matmul_backward B200 Coral 0.779548":
+        - cell "001_attention_softmax_dropout_value_matmul_backward":
+          - link "001_attention_softmax_dropout_value_matmul_backward":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/1/B200
+        - cell "B200":
+          - generic: B200
+        - cell "Coral"
+        - cell "0.779548"
+      - row "023_video_latent_vae_encoder_downsampling B200 Recursive 0.786987":
+        - cell "023_video_latent_vae_encoder_downsampling":
+          - link "023_video_latent_vae_encoder_downsampling":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/117/B200
+        - cell "B200":
+          - generic: B200
+        - cell "Recursive"
+        - cell "0.786987"
+      - row "069_rms_norm B200 doubleAI 0.799653":
+        - cell "069_rms_norm":
+          - link "069_rms_norm":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/69/B200
+        - cell "B200":
+          - generic: B200
+        - cell "doubleAI"
+        - cell "0.799653"
+      - row "004_attention_output_projection_with_reshape_backward B200 Recursive 0.700347":
+        - cell "004_attention_output_projection_with_reshape_backward":
+          - link "004_attention_output_projection_with_reshape_backward":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/4/B200
+        - cell "B200":
+          - generic: B200
+        - cell "Recursive"
+        - cell "0.700347"
+      - row "030_attention_output_projection_with_residual B200 ac4k 0.520238":
+        - cell "030_attention_output_projection_with_residual":
+          - link "030_attention_output_projection_with_residual":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/30/B200
+        - cell "B200":
+          - generic: B200
+        - cell "ac4k"
+        - cell "0.520238"
+      - row "003_lm_head_projection_with_logit_slicing B200 ac4k 0.530728":
+        - cell "003_lm_head_projection_with_logit_slicing":
+          - link "003_lm_head_projection_with_logit_slicing":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/3/B200
+        - cell "B200":
+          - generic: B200
+        - cell "ac4k"
+        - cell "0.530728"
+      - row "002_decoder_layer_full_block B200 doubleAI 0.495846":
+        - cell "002_decoder_layer_full_block":
+          - link "002_decoder_layer_full_block":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/96/B200
+        - cell "B200":
+          - generic: B200
+        - cell "doubleAI"
+        - cell "0.495846"
+      - row "001_fused_vision_multihead_attention_with_norms_backward B200 Recursive 0.912728":
+        - cell "001_fused_vision_multihead_attention_with_norms_backward":
+          - link "001_fused_vision_multihead_attention_with_norms_backward":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/95/B200
+        - cell "B200":
+          - generic: B200
+        - cell "Recursive"
+        - cell "0.912728"
+      - row "012_fused_cos_sin_embedding_generation B200 doubleAI 0.914213":
+        - cell "012_fused_cos_sin_embedding_generation":
+          - link "012_fused_cos_sin_embedding_generation":
+            - /url: /benchmarks/sol-execbench/leaderboard/kernel/12/B200
+        - cell "B200":
+          - generic: B200
+        - cell "doubleAI"
+        - cell "0.914213"
+  - generic: Cite Us
+  - generic: "If you find our work useful, please cite our paper:"
+  - generic: "@misc{sol-execbench, title={SOL-ExecBench: Speed-of-Light Benchmarking for Real-World GPU Kernels Against Hardware Limits}, author={Edward Lin and Sahil Modi and Siva Kumar Sastry Hari and Qijing Huang and Zhifan Ye and Nestor Qin and Fengzhe Zhou and Yuan Zhang and Jingquan Wang and Sana Damani and Dheeraj Peri and Ouye Xie and Aditya Kane and Moshe Maor and Michael Behar and Triston Cao and Rishabh Mehta and Vartika Singh and Vikram Sharma Mailthody and Terry Chen and Zihao Ye and Hanfeng Chen and Tianqi Chen and Vinod Grover and Wei Chen and Wei Liu and Eric Chung and Luis Ceze and Roger Bringmann and Cyril Zeller and Michael Lightstone and Christos Kozyrakis and Humphrey Shi}, year={2026}, eprint={2603.19173}, archivePrefix={arXiv}, primaryClass={cs.LG}, url={https://arxiv.org/abs/2603.19173}, }"
+- contentinfo:
+  - generic: © 2026 NVIDIA Corporation. All rights reserved.
+  - link "Privacy Policy":
+    - /url: https://www.nvidia.com/en-us/about-nvidia/privacy-policy/
+  - link "Your Privacy Choices":
+    - /url: https://www.nvidia.com/en-us/about-nvidia/privacy-center/
+  - link "Terms of Service":
+    - /url: https://www.nvidia.com/en-us/about-nvidia/terms-of-service/
+  - link "Accessibility":
+    - /url: https://www.nvidia.com/en-us/about-nvidia/accessibility/
+  - link "Corporate Policies":
+    - /url: https://www.nvidia.com/en-us/about-nvidia/company-policies/
+  - link "Product Security":
+    - /url: https://www.nvidia.com/en-us/product-security/
+  - text: "Contact:"
+  - link "solexecbench@nvidia.com":
+    - /url: mailto:solexecbench@nvidia.com

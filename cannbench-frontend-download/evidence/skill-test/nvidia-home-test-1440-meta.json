@@ -1,0 +1,23 @@
+{
+  "url": "https://research.nvidia.com/benchmarks/sol-execbench",
+  "title": "SOL-ExecBench | GPU Kernel Performance Benchmarks by NVIDIA",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "capturedAt": "2026-07-04T16:40:16.365Z",
+  "browserMetrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "clientWidth": 1440,
+    "documentScrollWidth": 1440,
+    "bodyScrollWidth": 1440,
+    "scrollHeight": 3175,
+    "horizontalOverflow": false,
+    "visibleCookieText": false
+  },
+  "screenshot": "/Users/hsin/Documents/Coding/cannbench/cannbench-frontend-download/evidence/skill-test/nvidia-home-test-1440-full.png",
+  "stateNote": "Captured by optional Playwright batch script. For logged-in pages, prefer in-app browser capture."
+}

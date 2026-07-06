@@ -1,0 +1,578 @@
+{
+  "name": "03-leaderboard",
+  "url": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard",
+  "title": "SOL-ExecBench | GPU Kernel Performance Benchmarks by NVIDIA",
+  "headings": [
+    "SOL-ExecBench",
+    "Collection Leaderboards",
+    "L1 - Single Operations",
+    "L2 - Fused Operations",
+    "Quantization",
+    "FlashInfer-Bench",
+    "Kernel Leaderboards"
+  ],
+  "visibleTexts": [
+    "Collection LeaderboardsCOLLECTION #1L1 - Single OperationsB200COLLECTION #2L2 - Fused OperationsB200COLLECTION #3QuantizationB200COLLECTION #4FlashInfer-BenchB200",
+    "COLLECTION #1L1 - Single OperationsB200COLLECTION #2L2 - Fused OperationsB200COLLECTION #3QuantizationB200COLLECTION #4FlashInfer-BenchB200",
+    "© 2026 NVIDIA Corporation. All rights reserved.Privacy PolicyYour Privacy ChoicesTerms of ServiceAccessibilityCorporate PoliciesProduct SecurityContact: solexecbench@nvidia.com",
+    "Global RankingsTop performing kernels across all benchmarks.",
+    "SOL-ExecBenchBlogProblemsLeaderboardStatusGitHub ↗HuggingFace ↗Paper ↗Log In",
+    "Global Rankings",
+    "IDProblemAvailable Leaderboards",
+    "1001_attention_softmax_dropout_value_matmul_backwardB200",
+    "2002_vae_conv3x3_groupnorm_silu_residual_fusedB200",
+    "3003_lm_head_projection_with_logit_slicingB200",
+    "4004_attention_output_projection_with_reshape_backwardB200",
+    "5005_conv_gated_projection_with_causal_convB200",
+    "6006_hyena_depthwise_conv1d_split_gateB200",
+    "7007_hyena_fft_size_padding_rfftB200",
+    "8008_expert_output_weighted_index_add_accumulationB200",
+    "9009_expert_token_scatter_with_weighted_forward_backwardB200",
+    "10010_attention_value_projection_with_transposeB200",
+    "11011_rotary_position_embeddingB200",
+    "12012_fused_cos_sin_embedding_generationB200",
+    "13013_fused_residual_rms_norm_backwardB200",
+    "14014_rotary_embedding_with_attention_scaling_backwardB200",
+    "15015_grouped_query_attention_with_rope_and_qk_normB200",
+    "16016_rope_inverse_frequency_computationB200",
+    "17017_moe_expert_swiglu_with_down_projection_backwardB200",
+    "18018_fused_rope_with_qk_norm_and_kv_cache_updateB200",
+    "19019_vision_3d_rotary_embedding_with_spatial_merge_indexing_backwardB200",
+    "20020_vision_patch_merger_spatial_shuffle_mlpB200",
+    "21021_vision_cu_seqlens_variable_length_attentionB200",
+    "22022_vision_mlp_gelu_backwardB200",
+    "23023_multimodal_rope_position_computation_with_grid_based_indexingB200",
+    "24024_vision_rotary_position_embedding_generation_backwardB200",
+    "25025_video_latent_gelu_activationB200",
+    "26026_video_patch_embedding_projectionB200",
+    "27027_video_spatial_attention_with_rope_3dB200",
+    "28028_hybrid_attention_mask_preparationB200",
+    "29029_mamba_conv1d_with_gatingB200",
+    "30030_attention_output_projection_with_residualB200",
+    "31031_repeat_kv_attention_matmulB200",
+    "32032_attention_weights_matmul_with_value_projectionB200",
+    "33033_post_norm_residualB200",
+    "34034_flux_multi_axis_rope_frequency_computationB200",
+    "35035_flux_ada_layer_norm_zero_modulation_extractionB200",
+    "36036_flux_output_norm_projection_chainB200",
+    "37037_flux_feedforward_gelu_approximateB200",
+    "38038_flux_multi_head_rmsnorm_qkB200",
+    "39039_adaptive_instance_normalization_2d_backwardB200",
+    "40040_conv2d_residual_blockB200",
+    "41041_strided_conv2d_downsamplingB200",
+    "42042_moe_expert_load_balancing_and_token_capacity_backwardB200",
+    "43043_mla_fused_qkv_rope_splitB200",
+    "44044_moe_expert_computationB200",
+    "45045_fused_linear_gelu_grn_linearB200",
+    "46046_attention_softmax_with_softcapping_and_dropoutB200",
+    "47047_attention_with_qk_norm_and_ropeB200",
+    "48048_fused_gate_up_projection_with_swigluB200",
+    "49049_attention_qk_matmul_with_gqa_repeat_and_scalingB200",
+    "50050_attention_qkv_projection_with_bias_and_reshapeB200",
+    "Showing 1–50 of 235Prev123451/5Next",
+    "Collection Leaderboards",
+    "Kernel Leaderboards",
+    "COLLECTION #1L1 - Single OperationsB200",
+    "COLLECTION #2L2 - Fused OperationsB200",
+    "COLLECTION #3QuantizationB200",
+    "COLLECTION #4FlashInfer-BenchB200",
+    "Available Leaderboards",
+    "B200",
+    "Problem",
+    "001_attention_softmax_dropout_value_matmul_backward",
+    "002_vae_conv3x3_groupnorm_silu_residual_fused",
+    "003_lm_head_projection_with_logit_slicing",
+    "004_attention_output_projection_with_reshape_backward",
+    "005_conv_gated_projection_with_causal_conv",
+    "006_hyena_depthwise_conv1d_split_gate",
+    "007_hyena_fft_size_padding_rfft",
+    "008_expert_output_weighted_index_add_accumulation",
+    "009_expert_token_scatter_with_weighted_forward_backward",
+    "010_attention_value_projection_with_transpose",
+    "011_rotary_position_embedding",
+    "012_fused_cos_sin_embedding_generation",
+    "013_fused_residual_rms_norm_backward"
+  ],
+  "links": [
+    {
+      "text": "SOL-ExecBench",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench"
+    },
+    {
+      "text": "Blog",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/blog"
+    },
+    {
+      "text": "Problems",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/problems"
+    },
+    {
+      "text": "Leaderboard",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard"
+    },
+    {
+      "text": "Status",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/status"
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/nvidia/sol-execbench"
+    },
+    {
+      "text": "HuggingFace ↗",
+      "href": "https://huggingface.co/datasets/nvidia/sol-execbench"
+    },
+    {
+      "text": "Paper ↗",
+      "href": "https://arxiv.org/abs/2603.19173"
+    },
+    {
+      "text": "Log In",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/login"
+    },
+    {
+      "text": "L1 - Single Operations",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/1/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/1/B200"
+    },
+    {
+      "text": "L2 - Fused Operations",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/2/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/2/B200"
+    },
+    {
+      "text": "Quantization",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/3/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/3/B200"
+    },
+    {
+      "text": "FlashInfer-Bench",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/4/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/4/B200"
+    },
+    {
+      "text": "001_attention_softmax_dropout_value_matmul_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/1/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/1/B200"
+    },
+    {
+      "text": "002_vae_conv3x3_groupnorm_silu_residual_fused",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/2/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/2/B200"
+    },
+    {
+      "text": "003_lm_head_projection_with_logit_slicing",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/3/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/3/B200"
+    },
+    {
+      "text": "004_attention_output_projection_with_reshape_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/4/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/4/B200"
+    },
+    {
+      "text": "005_conv_gated_projection_with_causal_conv",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/5/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/5/B200"
+    },
+    {
+      "text": "006_hyena_depthwise_conv1d_split_gate",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/6/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/6/B200"
+    },
+    {
+      "text": "007_hyena_fft_size_padding_rfft",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/7/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/7/B200"
+    },
+    {
+      "text": "008_expert_output_weighted_index_add_accumulation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/8/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/8/B200"
+    },
+    {
+      "text": "009_expert_token_scatter_with_weighted_forward_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/9/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/9/B200"
+    },
+    {
+      "text": "010_attention_value_projection_with_transpose",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/10/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/10/B200"
+    },
+    {
+      "text": "011_rotary_position_embedding",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/11/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/11/B200"
+    },
+    {
+      "text": "012_fused_cos_sin_embedding_generation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/12/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/12/B200"
+    },
+    {
+      "text": "013_fused_residual_rms_norm_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/13/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/13/B200"
+    },
+    {
+      "text": "014_rotary_embedding_with_attention_scaling_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/14/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/14/B200"
+    },
+    {
+      "text": "015_grouped_query_attention_with_rope_and_qk_norm",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/15/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/15/B200"
+    },
+    {
+      "text": "016_rope_inverse_frequency_computation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/16/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/16/B200"
+    },
+    {
+      "text": "017_moe_expert_swiglu_with_down_projection_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/17/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/17/B200"
+    },
+    {
+      "text": "018_fused_rope_with_qk_norm_and_kv_cache_update",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/18/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/18/B200"
+    },
+    {
+      "text": "019_vision_3d_rotary_embedding_with_spatial_merge_indexing_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/19/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/19/B200"
+    },
+    {
+      "text": "020_vision_patch_merger_spatial_shuffle_mlp",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/20/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/20/B200"
+    },
+    {
+      "text": "021_vision_cu_seqlens_variable_length_attention",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/21/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/21/B200"
+    },
+    {
+      "text": "022_vision_mlp_gelu_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/22/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/22/B200"
+    },
+    {
+      "text": "023_multimodal_rope_position_computation_with_grid_based_indexing",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/23/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/23/B200"
+    },
+    {
+      "text": "024_vision_rotary_position_embedding_generation_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/24/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/24/B200"
+    },
+    {
+      "text": "025_video_latent_gelu_activation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/25/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/25/B200"
+    },
+    {
+      "text": "026_video_patch_embedding_projection",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/26/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/26/B200"
+    },
+    {
+      "text": "027_video_spatial_attention_with_rope_3d",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/27/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/27/B200"
+    },
+    {
+      "text": "028_hybrid_attention_mask_preparation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/28/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/28/B200"
+    },
+    {
+      "text": "029_mamba_conv1d_with_gating",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/29/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/29/B200"
+    },
+    {
+      "text": "030_attention_output_projection_with_residual",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/30/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/30/B200"
+    },
+    {
+      "text": "031_repeat_kv_attention_matmul",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/31/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/31/B200"
+    },
+    {
+      "text": "032_attention_weights_matmul_with_value_projection",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/32/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/32/B200"
+    },
+    {
+      "text": "033_post_norm_residual",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/33/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/33/B200"
+    },
+    {
+      "text": "034_flux_multi_axis_rope_frequency_computation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/34/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/34/B200"
+    },
+    {
+      "text": "035_flux_ada_layer_norm_zero_modulation_extraction",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/35/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/35/B200"
+    },
+    {
+      "text": "036_flux_output_norm_projection_chain",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/36/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/36/B200"
+    },
+    {
+      "text": "037_flux_feedforward_gelu_approximate",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/37/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/37/B200"
+    },
+    {
+      "text": "038_flux_multi_head_rmsnorm_qk",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/38/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/38/B200"
+    },
+    {
+      "text": "039_adaptive_instance_normalization_2d_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/39/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/39/B200"
+    },
+    {
+      "text": "040_conv2d_residual_block",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/40/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/40/B200"
+    },
+    {
+      "text": "041_strided_conv2d_downsampling",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/41/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/41/B200"
+    },
+    {
+      "text": "042_moe_expert_load_balancing_and_token_capacity_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/42/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/42/B200"
+    },
+    {
+      "text": "043_mla_fused_qkv_rope_split",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/43/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/43/B200"
+    },
+    {
+      "text": "044_moe_expert_computation",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/44/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/44/B200"
+    },
+    {
+      "text": "045_fused_linear_gelu_grn_linear",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/45/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/45/B200"
+    },
+    {
+      "text": "046_attention_softmax_with_softcapping_and_dropout",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/46/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/46/B200"
+    },
+    {
+      "text": "047_attention_with_qk_norm_and_rope",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/47/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/47/B200"
+    },
+    {
+      "text": "048_fused_gate_up_projection_with_swiglu",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/48/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/48/B200"
+    },
+    {
+      "text": "049_attention_qk_matmul_with_gqa_repeat_and_scaling",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/49/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/49/B200"
+    },
+    {
+      "text": "050_attention_qkv_projection_with_bias_and_reshape",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/50/B200"
+    },
+    {
+      "text": "B200",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/kernel/50/B200"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "Your Privacy Choices",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "name": "05-collection-l1",
+  "url": "https://research.nvidia.com/benchmarks/sol-execbench/collection/1",
+  "title": "SOL-ExecBench | GPU Kernel Performance Benchmarks by NVIDIA",
+  "headings": [
+    "SOL-ExecBench",
+    "Description",
+    "Kernels",
+    "Submit Code",
+    "Leaderboard"
+  ],
+  "visibleTexts": [
+    "DescriptionSingle-operation kernels from production models",
+    "Submit CodeUpload an archive containing submissions for the kernels in this collection.Please login to submit solutions.",
+    "© 2026 NVIDIA Corporation. All rights reserved.Privacy PolicyYour Privacy ChoicesTerms of ServiceAccessibilityCorporate PoliciesProduct SecurityContact: solexecbench@nvidia.com",
+    "CollectionB20094 kernelsL1 - Single Operations",
+    "SOL-ExecBenchBlogProblemsLeaderboardStatusGitHub ↗HuggingFace ↗Paper ↗Log In",
+    "L1 - Single Operations",
+    "#NameDevice",
+    "1001_attention_softmax_dropout_value_matmul_backwardB200",
+    "2002_vae_conv3x3_groupnorm_silu_residual_fusedB200",
+    "3003_lm_head_projection_with_logit_slicingB200",
+    "4004_attention_output_projection_with_reshape_backwardB200",
+    "5005_conv_gated_projection_with_causal_convB200",
+    "Showing 1–5 of 94Prev12...191/19Next",
+    "LeaderboardB200",
+    "Description",
+    "Kernels",
+    "View Full Leaderboard →",
+    "Name",
+    "001_attention_softmax_dropout_value_matmul_backward",
+    "002_vae_conv3x3_groupnorm_silu_residual_fused",
+    "003_lm_head_projection_with_logit_slicing",
+    "004_attention_output_projection_with_reshape_backward",
+    "005_conv_gated_projection_with_causal_conv",
+    "Submit CodeUpload an archive containing submissions for the kernels in this collection.",
+    "#UserSOL Score",
+    "-SOL Bound1.000000",
+    "1Databricks0.763041",
+    "2ac4k0.762902",
+    "3doubleAI0.758731",
+    "#4Recursive0.758430",
+    "#5Amir M. Mir | SF Tensor0.663699",
+    "#6Cursor0.582481",
+    "-Scoring Baseline0.500000",
+    "-Reference Implementation0.237027",
+    "#7Igor Bragaia0.160940",
+    "#8KernelOpt0.107010",
+    "#9wychi8880.097196",
+    "#10Zerg AI0.092380",
+    "#11Argus0.091712",
+    "#12Gilded Quail0.086706",
+    "#13gnehiz0.070859",
+    "#14Yuang0.056907",
+    "#15AKO4ALL0.046052",
+    "#16Bragaia0.038378",
+    "#17Clever Scorpion0.033317",
+    "#18Theoric0.030863",
+    "#19Snappy Macaw0.026593",
+    "#20Iridescent Lemur0.026339",
+    "#21Mystic Orca0.023800",
+    "#22Arcane Vulture0.017364",
+    "#23Bob Huang0.016018",
+    "#24Latency Lower0.015785",
+    "#25Coral0.015772",
+    "#26Zesty Toucan0.014817",
+    "#27Quick Impala0.014108",
+    "#28Rapid Lynx0.013071",
+    "#29Noble Pegasus0.010707",
+    "#30AAA0.009223",
+    "#31Ember Bison0.009220",
+    "#32Chrome Lion0.008118",
+    "#33Argus-sufeng0.007850",
+    "#34Stellar Flamingo0.007616",
+    "#35bismuth830.007585",
+    "#36Happy Dragonfly0.007554",
+    "#37Baba Yaga0.007386",
+    "#38Rogue Pegasus0.007374",
+    "#39Qin Liu @ UCD0.007213",
+    "#40XG0.007194",
+    "#41Alex N0.007164",
+    "#42genproof.com0.006940",
+    "#43zguo0.006736",
+    "#44Neural Jackal0.006691",
+    "#45Phantom Orca0.006539",
+    "#46Shawn_Ming0.006421",
+    "#47Laser Tapir0.005849",
+    "#48Nestor_Qin0.005312",
+    "#49Ubios-Agent0.005273",
+    "#50imec.AILabs0.005267",
+    "#51Jasper Otter0.004483",
+    "#52Brave Vulture0.004221"
+  ],
+  "links": [
+    {
+      "text": "SOL-ExecBench",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench"
+    },
+    {
+      "text": "Blog",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/blog"
+    },
+    {
+      "text": "Problems",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/problems"
+    },
+    {
+      "text": "Leaderboard",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard"
+    },
+    {
+      "text": "Status",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/status"
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/nvidia/sol-execbench"
+    },
+    {
+      "text": "HuggingFace ↗",
+      "href": "https://huggingface.co/datasets/nvidia/sol-execbench"
+    },
+    {
+      "text": "Paper ↗",
+      "href": "https://arxiv.org/abs/2603.19173"
+    },
+    {
+      "text": "Log In",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/login"
+    },
+    {
+      "text": "001_attention_softmax_dropout_value_matmul_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/1"
+    },
+    {
+      "text": "002_vae_conv3x3_groupnorm_silu_residual_fused",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/2"
+    },
+    {
+      "text": "003_lm_head_projection_with_logit_slicing",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/3"
+    },
+    {
+      "text": "004_attention_output_projection_with_reshape_backward",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/4"
+    },
+    {
+      "text": "005_conv_gated_projection_with_causal_conv",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/kernel/5"
+    },
+    {
+      "text": "login",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/login"
+    },
+    {
+      "text": "View Full Leaderboard →",
+      "href": "https://research.nvidia.com/benchmarks/sol-execbench/leaderboard/collection/1/B200"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "Your Privacy Choices",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    },
+    {
+      "text": "Accessibility",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/accessibility/"
+    },
+    {
+      "text": "Corporate Policies",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/company-policies/"
+    },
+    {
+      "text": "Product Security",
+      "href": "https://www.nvidia.com/en-us/product-security/"
+    },
+    {
+      "text": "solexecbench@nvidia.com",
+      "href": "mailto:solexecbench@nvidia.com"
+    },
+    {
+      "text": "NVIDIA Preference Center",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-center/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/cookie-policy/"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/terms-of-service/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.nvidia.com/en-us/about-nvidia/privacy-policy/"
+    },
+    {
+      "text": "",
+      "href": "https://www.onetrust.com/solutions/consent-and-preferences/?utm_source=cmp&utm_medium=cmpbanner"
+    }
+  ]
+}

@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CANN Bench 登录态中文站点 UX 分析报告</title>
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --paper: #ffffff;
+        --ink: #202532;
+        --muted: #697080;
+        --line: #dde2ec;
+        --blue: #5e7ce0;
+        --cyan: #2aa8c8;
+        --mint: #38b98d;
+        --amber: #d9851f;
+        --rose: #d94d4d;
+        --violet: #8064d9;
+        --soft-blue: #eef3ff;
+        --soft-mint: #ebfbf5;
+        --soft-amber: #fff6e8;
+        --soft-rose: #fff0f0;
+        --shadow: 0 18px 50px rgba(39, 48, 70, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(1280px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        min-height: 620px;
+        color: #fff;
+        background:
+          linear-gradient(90deg, rgba(23, 30, 48, 0.90), rgba(28, 39, 64, 0.66) 46%, rgba(34, 44, 70, 0.18)),
+          url("../evidence/user-screenshots/user-01.png") center top / cover no-repeat;
+        display: flex;
+        align-items: flex-end;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-inner {
+        width: min(1280px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 84px 0 72px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #dbe7ff;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 32px;
+        height: 3px;
+        background: var(--mint);
+      }
+
+      h1 {
+        max-width: 850px;
+        margin: 24px 0 18px;
+        font-size: 56px;
+        line-height: 1.08;
+      }
+
+      .hero p {
+        max-width: 780px;
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.8;
+        color: #edf3ff;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 34px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 32px;
+        padding: 6px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+        gap: 36px;
+        align-items: end;
+        margin-bottom: 28px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.18;
+      }
+
+      .lead {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .note {
+        border-left: 4px solid var(--blue);
+        background: var(--soft-blue);
+        padding: 16px 18px;
+        color: #3c4662;
+        line-height: 1.7;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .persona {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        padding: 22px;
+        min-height: 220px;
+        box-shadow: 0 8px 24px rgba(39, 48, 70, 0.05);
+      }
+
+      .persona strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .persona p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .journey {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(120px, 1fr));
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .step {
+        min-height: 132px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        padding: 16px;
+      }
+
+      .step span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background: var(--blue);
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .step b {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .step small {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .evidence {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+        gap: 26px;
+        align-items: start;
+        margin: 22px 0 40px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      figure img {
+        width: 100%;
+        display: block;
+        border: 1px solid var(--line);
+        background: #f9fbff;
+      }
+
+      figcaption {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .analysis h3 {
+        margin: 4px 0 12px;
+        font-size: 24px;
+      }
+
+      .score {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 18px;
+        color: var(--rose);
+        font-weight: 800;
+      }
+
+      .score em {
+        font-style: normal;
+        font-size: 36px;
+      }
+
+      .analysis ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0;
+      }
+
+      .tag {
+        display: inline-flex;
+        min-height: 28px;
+        align-items: center;
+        padding: 4px 10px;
+        border: 1px solid var(--line);
+        background: #f9fbff;
+        color: #3d475c;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .tag.p0 {
+        color: #a63333;
+        background: var(--soft-rose);
+        border-color: #ffd0d0;
+      }
+
+      .tag.p1 {
+        color: #8a550d;
+        background: var(--soft-amber);
+        border-color: #f4d49c;
+      }
+
+      .heatmap {
+        display: grid;
+        grid-template-columns: 1.1fr repeat(5, 1fr);
+        border: 1px solid var(--line);
+        background: var(--paper);
+        overflow-x: auto;
+      }
+
+      .heatmap div {
+        min-height: 52px;
+        padding: 12px;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+
+      .heatmap .head {
+        background: #edf1f8;
+        font-weight: 800;
+        color: #3a4152;
+      }
+
+      .hot {
+        background: var(--soft-rose);
+        color: #a63333;
+        font-weight: 800;
+      }
+
+      .warm {
+        background: var(--soft-amber);
+        color: #8a550d;
+        font-weight: 800;
+      }
+
+      .ok {
+        background: var(--soft-mint);
+        color: #166d56;
+        font-weight: 800;
+      }
+
+      .priority {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .priority-item {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        padding: 22px;
+      }
+
+      .priority-item h3 {
+        margin: 0 0 12px;
+        font-size: 22px;
+      }
+
+      .priority-item ol {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .comp-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .comp-card {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        padding: 16px;
+        box-shadow: 0 8px 24px rgba(39, 48, 70, 0.05);
+      }
+
+      .comp-card h3 {
+        margin: 14px 0 8px;
+        font-size: 20px;
+      }
+
+      .comp-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .comp-card img {
+        width: 100%;
+        max-height: 460px;
+        object-fit: cover;
+        object-position: top;
+        border: 1px solid var(--line);
+        background: #fff;
+        display: block;
+      }
+
+      .files {
+        background: #1f2533;
+        color: #edf3ff;
+        padding: 28px;
+        overflow-x: auto;
+        font-family: "SFMono-Regular", Consolas, monospace;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .files a {
+        color: #9bd8ff;
+      }
+
+      @media (max-width: 920px) {
+        .hero-inner,
+        .page {
+          width: min(100% - 24px, 1280px);
+        }
+
+        .hero {
+          min-height: 560px;
+        }
+
+        h1 {
+          font-size: 40px;
+        }
+
+        .section-head,
+        .evidence,
+        .grid-3,
+        .comp-grid,
+        .priority {
+          grid-template-columns: 1fr;
+        }
+
+        .heatmap {
+          min-width: 820px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">UX Audit · Logged-in Chinese Desktop</div>
+        <h1>CANN Bench 用户旅程与体验改版报告</h1>
+        <p>这份报告基于线上生产前端包、登录态中文桌面截图和本地登录态回放，分析 CANN Bench 当前体验中真正影响任务完成的问题。</p>
+        <div class="hero-meta">
+          <span class="pill">依据：生产前端包</span>
+          <span class="pill">证据：2718px 桌面截图</span>
+          <span class="pill">重点：任务闭环</span>
+          <span class="pill">结论：功能全，流程弱</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>一、用户是谁，为什么来</h2>
+            <p class="lead">CANN Bench 不是普通展示站，它本质上是一个面向 Ascend NPU 算子评测的任务工作台。用户最关心的是能否快速理解规则、准备提交、追踪结果，并把结果放入排行榜比较。</p>
+          </div>
+          <div class="note">核心判断：前端已经实现了完整评测能力，包括模板说明、zip 预览、CLI、任务日志、产物、rerun、隐藏集和管理后台；体验问题主要来自路径组织和行动优先级。</div>
+        </div>
+
+        <div class="grid-3">
+          <article class="persona">
+            <strong>算子提交者</strong>
+            <p>想知道评什么、如何打包 zip、提交后是否通过、失败后如何修复。这个用户需要清晰的任务步骤和可执行模板。</p>
+          </article>
+          <article class="persona">
+            <strong>结果观察者</strong>
+            <p>想判断不同方案、硬件、任务子集的表现是否可信。这个用户需要可解释的排行榜和评测口径。</p>
+          </article>
+          <article class="persona">
+            <strong>维护者</strong>
+            <p>需要管理用户、配额、任务、评测包、子集和权限。这个用户需要高密度工作台，但也需要风险分层和安全确认。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>二、前端文件暴露出的产品形态</h2>
+            <p class="lead">生产包不是原始源码，但已经足以看到完整的信息架构、接口调用、角色权限和页面状态。它说明 CANN Bench 已经是完整工作台，不是普通展示站。</p>
+          </div>
+          <div class="note">这次分析的重点从“截图里看起来怎么样”改为“前端能力如何支持用户完成一次评测闭环”。</div>
+        </div>
+        <div class="grid-3">
+          <article class="persona">
+            <strong>提交与评测链路已完整</strong>
+            <p>前端包含评测集、bundle/reference/API description、zip 上传和预览、硬件选择、tag、聚合码、提交额度、CLI 脚本。</p>
+          </article>
+          <article class="persona">
+            <strong>诊断能力已存在但分散</strong>
+            <p>任务详情支持 compile、precision、performance、logs、artifacts、rerun、hidden rerun，但列表页没有把失败后的下一步显性化。</p>
+          </article>
+          <article class="persona">
+            <strong>维护能力很重</strong>
+            <p>管理后台覆盖用户、配额、角色、评测包、子集、blog、维护模式、提交策略、分数刷新、安全报告，普通路径和后台路径需要分层。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>三、主线用户旅程</h2>
+            <p class="lead">最重要的路径不是浏览所有页面，而是从“知道规则”走到“提交后修复并提升排名”。</p>
+          </div>
+        </div>
+        <div class="journey">
+          <div class="step"><span>1</span><b>了解规则</b><small>确认 CANN Bench 是什么、硬件是什么、结果如何比较。</small></div>
+          <div class="step"><span>2</span><b>选择任务</b><small>进入评测集，找到 Level、算子、任务包和模板。</small></div>
+          <div class="step"><span>3</span><b>准备 zip</b><small>基于 ACLNN 或 Direct Launch 示例组织目录。</small></div>
+          <div class="step"><span>4</span><b>提交评测</b><small>上传 zip，选择硬件，填写标签和聚合码。</small></div>
+          <div class="step"><span>5</span><b>追踪任务</b><small>查看编译、精度、性能状态。</small></div>
+          <div class="step"><span>6</span><b>诊断失败</b><small>下载日志和产物，定位失败算子。</small></div>
+          <div class="step"><span>7</span><b>比较排名</b><small>理解总分、隐藏用例、提交算子数和硬件。</small></div>
+          <div class="step"><span>8</span><b>再次提交</b><small>修复后重提，并通过团队聚合码沉淀最好结果。</small></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>四、关键证据与问题</h2>
+            <p class="lead">下面每个触点同时参考前端能力和桌面截图。评分满分 100，综合效率、认知负担、可执行性、可发现性和反馈闭环。</p>
+          </div>
+        </div>
+
+        <article class="evidence">
+          <figure>
+            <img src="./annotated/01-overview-entry.png" alt="概览页入口标注图" />
+            <figcaption>概览页已经提供“浏览算子 / 查看排行榜 / 提交算子”三条入口，但它们还没有被组织成明确的新手流程。</figcaption>
+          </figure>
+          <div class="analysis">
+            <h3>TP1 概览页：入口齐全，但第一次提交路径不够明确</h3>
+            <div class="score"><em>72</em>/100</div>
+            <div class="tag-row">
+              <span class="tag p1">P1</span>
+              <span class="tag">首页</span>
+              <span class="tag">新手引导</span>
+            </div>
+            <ul>
+              <li>页面能说明平台定位，但用户还要自己推断“我应该先看任务，还是直接提交”。</li>
+              <li>任务目录、开源仓、技术报告都出现了，但它们没有形成清晰的行动顺序。</li>
+              <li>建议把首屏改成“开始一次提交”的任务入口，并加入 4 步路径：下载任务包、基于模板实现、上传 zip、查看结果。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="evidence">
+          <figure>
+            <img src="../evidence/user-screenshots/user-02.png" alt="评测集页面截图" />
+            <figcaption>评测集页展示了 Official-Tasks、Kernel Bench、Level 与算子数量，但任务包、模板、reference 等前端能力没有被组织成主操作。</figcaption>
+          </figure>
+          <div class="analysis">
+            <h3>TP2 评测集页：像目录，不像任务包中心</h3>
+            <div class="score"><em>68</em>/100</div>
+            <div class="tag-row">
+              <span class="tag p1">P1</span>
+              <span class="tag">评测集</span>
+              <span class="tag">模板入口</span>
+            </div>
+            <ul>
+              <li>用户可以看到 Level 1-4 和算子数量，但“不知道从哪里拿到正确 zip 模板”。</li>
+              <li>前端 API 已经支持 bundle、reference、api-description、subsets，但列表页没有把这些作为一级入口。</li>
+              <li>建议每个评测集卡片增加：下载任务包、查看算子列表、查看提交模板、是否用于排行榜。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="evidence">
+          <figure>
+            <img src="./annotated/05-submit-flow.png" alt="提交页任务流标注图" />
+            <figcaption>提交页在桌面宽度下是完整两栏布局；问题不是表单缺失，而是 zip、模板、硬件、tag、聚合码、CLI 等能力平铺后缺少步骤关系。</figcaption>
+          </figure>
+          <div class="analysis">
+            <h3>TP3 提交页：功能完整，但第一次提交路径不够显性</h3>
+            <div class="score"><em>62</em>/100</div>
+            <div class="tag-row">
+              <span class="tag p0">P0</span>
+              <span class="tag">提交</span>
+              <span class="tag">步骤流</span>
+              <span class="tag">任务流</span>
+            </div>
+            <ul>
+              <li>前端已经有 zip 预览、ACLNN/Direct 模板说明、tag、聚合码、提交额度和 CLI；这些能力很有价值，但层级接近。</li>
+              <li>新用户仍要自己判断：先下载模板、先选评测集、还是先上传 zip。</li>
+              <li>建议改为分步表单：选择评测集 -> 下载/确认模板 -> 上传 zip -> 选择硬件 -> 标签/聚合码 -> 提交。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="evidence">
+          <figure>
+            <img src="./annotated/06-jobs-feedback.png" alt="任务页反馈闭环标注图" />
+            <figcaption>任务页状态标签醒目，但失败原因和下一步修复入口不够集中。</figcaption>
+          </figure>
+          <div class="analysis">
+            <h3>TP4 任务页：能看状态，但诊断闭环弱</h3>
+            <div class="score"><em>63</em>/100</div>
+            <div class="tag-row">
+              <span class="tag p0">P0</span>
+              <span class="tag">任务</span>
+              <span class="tag">失败诊断</span>
+            </div>
+            <ul>
+              <li>状态筛选覆盖成功、排队、编译失败、精度错误、性能失败等情况，但用户看到失败后仍要自己找日志。</li>
+              <li>下载和删除按钮层级接近，存在误操作风险。</li>
+              <li>建议增加失败摘要、首个错误、查看日志、下载产物、复制重提命令，并默认提供“我的任务 / 全部任务”切换。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="evidence">
+          <figure>
+            <img src="../evidence/user-screenshots/user-04.png" alt="排行榜页面截图" />
+            <figcaption>排行榜信息很完整，但总分、隐藏用例、加速比、提交算子数等指标需要更强解释。</figcaption>
+          </figure>
+          <div class="analysis">
+            <h3>TP5 排行榜：数据丰富，但阅读成本高</h3>
+            <div class="score"><em>66</em>/100</div>
+            <div class="tag-row">
+              <span class="tag p1">P1</span>
+              <span class="tag">排行榜</span>
+              <span class="tag">指标解释</span>
+            </div>
+            <ul>
+              <li>资深用户能看到完整指标，但新用户难以快速判断“谁真的更好”。</li>
+              <li>筛选和指标解释同时出现，认知负担偏高。</li>
+              <li>建议提供“快速看排名”和“深入分析”两种模式，默认突出总分、提交算子、通过率、更新时间。</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>五、问题热力图</h2>
+            <p class="lead">最需要先改的是提交页和任务页，因为它们直接决定用户能否完成一次评测闭环。</p>
+          </div>
+        </div>
+        <div class="heatmap">
+          <div class="head">触点</div>
+          <div class="head">效率</div>
+          <div class="head">认知负担</div>
+          <div class="head">可执行性</div>
+          <div class="head">可发现性</div>
+          <div class="head">反馈闭环</div>
+
+          <div>概览页</div><div class="ok">较好</div><div class="warm">中</div><div class="warm">中</div><div class="ok">较好</div><div class="warm">中</div>
+          <div>评测集页</div><div class="warm">中</div><div class="warm">中</div><div class="hot">弱</div><div class="warm">中</div><div class="warm">中</div>
+          <div>提交页</div><div class="hot">弱</div><div class="hot">弱</div><div class="warm">中</div><div class="warm">中</div><div class="hot">弱</div>
+          <div>任务页</div><div class="warm">中</div><div class="warm">中</div><div class="warm">中</div><div class="ok">较好</div><div class="hot">弱</div>
+          <div>排行榜</div><div class="warm">中</div><div class="hot">弱</div><div class="ok">较好</div><div class="warm">中</div><div class="warm">中</div>
+          <div>账号页</div><div class="ok">较好</div><div class="warm">中</div><div class="ok">较好</div><div class="warm">中</div><div class="warm">中</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>六、竞品参考：NVIDIA SOL-ExecBench</h2>
+            <p class="lead">补充采集了竞品的首页、Problems、Leaderboard、Status 和 Collection 详情页。截图均按 1440px 桌面整页标准采集，metadata 显示无 cookie 弹窗、无横向溢出。</p>
+          </div>
+          <div class="note">参考结论：不要照搬视觉风格，而要学习它把“找题、看榜、看状态、找开源资源和论文”组织成清晰路径的方式。</div>
+        </div>
+        <div class="comp-grid">
+          <article class="comp-card">
+            <img src="../evidence/competitor-nvidia/01-home-skill-1440-fullpage-clean.png" alt="NVIDIA SOL-ExecBench 首页桌面整页截图" />
+            <h3>首页：先说清楚价值和入口</h3>
+            <p>首屏用一句话说明真实 GPU kernel 对硬件极限的评测，并把 Explore Problems 和 View Leaderboard 作为两个主入口。CANN Bench 首页也应先服务“开始一次提交”。</p>
+          </article>
+          <article class="comp-card">
+            <img src="../evidence/competitor-nvidia/02-problems-skill-1440-fullpage-clean.png" alt="NVIDIA SOL-ExecBench Problems 页桌面整页截图" />
+            <h3>Problems：任务中心比目录更强</h3>
+            <p>页面顶部是 collections，下面是可搜索、可分页的 kernel 表格和 tags。CANN Bench 的评测集页应升级为任务包中心，突出下载任务包、模板、API 和算子列表。</p>
+          </article>
+          <article class="comp-card">
+            <img src="../evidence/competitor-nvidia/03-leaderboard-skill-1440-fullpage-clean.png" alt="NVIDIA SOL-ExecBench Leaderboard 页桌面整页截图" />
+            <h3>Leaderboard：先分层，再深入</h3>
+            <p>竞品先给 collection leaderboard，再列 kernel leaderboard。CANN Bench 的排行榜指标更多，建议默认提供快速排名层，再展开标准/隐藏用例、加速比和提交算子数。</p>
+          </article>
+          <article class="comp-card">
+            <img src="../evidence/competitor-nvidia/04-status-skill-1440-fullpage-clean.png" alt="NVIDIA SOL-ExecBench Status 页桌面整页截图" />
+            <h3>Status：公开运行状态增强信任</h3>
+            <p>Status 是实时提交流，包含 ID、时间、用户、问题、设备和状态。CANN Bench 可借鉴这种透明度，但要同时保留“我的任务”和失败修复路径。</p>
+          </article>
+          <article class="comp-card">
+            <img src="../evidence/competitor-nvidia/05-collection-l1-skill-1440-fullpage-clean.png" alt="NVIDIA SOL-ExecBench Collection L1 页桌面整页截图" />
+            <h3>Collection：说明、题目、提交、榜单同页</h3>
+            <p>L1 页面把 Description、Kernels、Submit Code、Leaderboard 放在同一页。CANN Bench 评测集详情可采用类似结构，但要强化 zip 模板、bundle、reference 和 cases.yaml。</p>
+          </article>
+          <article class="comp-card">
+            <div class="note">CANN Bench 不能只做公开展示页。它的优势应落在登录态工作台：分步提交、zip 校验、任务诊断、日志产物、重提命令和团队聚合码。</div>
+            <h3>迁移原则</h3>
+            <p>学习竞品的信息架构，不复制它的产品定位。CANN Bench 的主线应是：评测集任务包 -> 提交 -> 任务诊断 -> 排行榜，而不是只让用户浏览内容。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>七、中文版优先的改版优先级</h2>
+            <p class="lead">先解决任务闭环，再降低理解成本，最后完善高级用户和维护者体验。英文版建议在中文结构稳定后同步。</p>
+          </div>
+        </div>
+        <div class="priority">
+          <article class="priority-item">
+            <h3>P0：先修提交闭环</h3>
+            <ol>
+              <li>提交页改为清晰分步表单。</li>
+              <li>评测集页补强任务包、模板和 reference 入口。</li>
+              <li>任务页增加失败诊断和下一步操作。</li>
+            </ol>
+          </article>
+          <article class="priority-item">
+            <h3>P1：降低理解成本</h3>
+            <ol>
+              <li>首页增加首次提交路径。</li>
+              <li>排行榜增加快速/深入两种阅读模式。</li>
+              <li>排行榜增加指标解释和阅读模式。</li>
+            </ol>
+          </article>
+          <article class="priority-item">
+            <h3>P2：完善高级场景</h3>
+            <ol>
+              <li>账号页与 CLI 提交流程联动。</li>
+              <li>管理页做角色化分区和安全提示。</li>
+              <li>英文版按中文信息架构同步。</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>八、建议的新信息架构</h2>
+            <p class="lead">当前导航更偏“展示站”。如果目标是提升提交成功率，导航应更贴近用户真实任务顺序。</p>
+          </div>
+        </div>
+        <div class="note">
+          建议导航顺序：概览 -> 评测集 -> 提交 -> 任务 -> 排行榜 -> 版本动态。<br />
+          “管理”仅维护者可见，并在右侧独立成后台入口，避免和参赛者主路径混在一起。
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>九、文件与素材位置</h2>
+            <p class="lead">本报告引用的截图、标注图、生产前端包和页面抽取数据都已保存到工作区。</p>
+          </div>
+        </div>
+        <div class="files">
+          HTML 报告：<a href="./ux-report.html">analysis/ux-report.html</a><br />
+          Markdown 底稿：<a href="./ux-analysis-zh.md">analysis/ux-analysis-zh.md</a><br />
+          前端文件审计：<a href="./frontend-file-ux-audit-zh.md">analysis/frontend-file-ux-audit-zh.md</a><br />
+          桌面截图：<a href="../evidence/user-screenshots/user-01.png">evidence/user-screenshots/*.png</a><br />
+          竞品截图：<a href="../evidence/competitor-nvidia/competitor-pages-summary.json">evidence/competitor-nvidia/*-skill-1440-fullpage-clean.png</a><br />
+          标注截图：<a href="./annotated/01-overview-entry.png">analysis/annotated/*.png</a><br />
+          登录态页面数据：<a href="../meta/logged-in-pages.zh.desktop.json">meta/logged-in-pages.zh.desktop.json</a><br />
+          生产前端包：<a href="../public/index.html">public/index.html</a>、<a href="../public/assets/index-C5ax4_ra.js">index-C5ax4_ra.js</a>、<a href="../public/assets/index-CsThEqRM.css">index-CsThEqRM.css</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

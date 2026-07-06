@@ -1,0 +1,93 @@
+{
+  "assets": [
+    {
+      "contentType": "",
+      "id": "11ee9f4b3f5c229c",
+      "kind": "stylesheet",
+      "name": "css2",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/11ee9f4b3f5c229c",
+      "url": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap"
+    },
+    {
+      "contentType": "",
+      "id": "019a3448b59b1db7",
+      "kind": "stylesheet",
+      "name": "index-CsThEqRM.css",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/019a3448b59b1db7.css",
+      "url": "https://cannbench.com/assets/index-CsThEqRM.css"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "d5490ae6c0c2cb6c",
+      "kind": "image",
+      "name": "svg-1",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/d5490ae6c0c2cb6c.svg",
+      "url": "inline-svg:d5490ae6c0c2cb6c"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "92fc20f24ad575bd",
+      "kind": "image",
+      "name": "svg-2",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/92fc20f24ad575bd.svg",
+      "url": "inline-svg:92fc20f24ad575bd"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7683291df0cc805e",
+      "kind": "image",
+      "name": "svg-3",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/7683291df0cc805e.svg",
+      "url": "inline-svg:7683291df0cc805e"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "e57dbde7cbfa5832",
+      "kind": "image",
+      "name": "svg-4",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/e57dbde7cbfa5832.svg",
+      "url": "inline-svg:e57dbde7cbfa5832"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "496988d71e3971ae",
+      "kind": "image",
+      "name": "svg-5",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/496988d71e3971ae.svg",
+      "url": "inline-svg:496988d71e3971ae"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "12a58677d6590453",
+      "kind": "image",
+      "name": "svg-6",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/12a58677d6590453.svg",
+      "url": "inline-svg:12a58677d6590453"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "fc57b5301b5f1e7c",
+      "kind": "image",
+      "name": "svg-7",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/fc57b5301b5f1e7c.svg",
+      "url": "inline-svg:fc57b5301b5f1e7c"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "d2bd43181cf25a47",
+      "kind": "image",
+      "name": "svg-8",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/d2bd43181cf25a47.svg",
+      "url": "inline-svg:d2bd43181cf25a47"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "0cf18ae51a8e31d6",
+      "kind": "image",
+      "name": "svg-9",
+      "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/0cf18ae51a8e31d6.svg",
+      "url": "inline-svg:0cf18ae51a8e31d6"
+    }
+  ],
+  "failures": []
+}

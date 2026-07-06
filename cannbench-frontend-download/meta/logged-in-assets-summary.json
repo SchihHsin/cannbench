@@ -1,0 +1,287 @@
+{
+  "inventory": {
+    "assets": [
+      {
+        "id": "11ee9f4b3f5c229c",
+        "kind": "stylesheet",
+        "name": "css2",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 537,
+            "property": "href"
+          }
+        ],
+        "url": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap"
+      },
+      {
+        "id": "019a3448b59b1db7",
+        "kind": "stylesheet",
+        "name": "index-CsThEqRM.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 544,
+            "property": "href"
+          }
+        ],
+        "url": "https://cannbench.com/assets/index-CsThEqRM.css"
+      },
+      {
+        "id": "bcb28c2e8eaaa244",
+        "kind": "script",
+        "name": "index-C5ax4_ra.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 542,
+            "property": "src"
+          }
+        ],
+        "url": "https://cannbench.com/assets/index-C5ax4_ra.js"
+      },
+      {
+        "id": "676beff0ccb16541",
+        "kind": "other",
+        "name": "runners",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          },
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://cannbench.com/api/meta/runners"
+      },
+      {
+        "id": "2e1c9b7e1410b0bd",
+        "kind": "other",
+        "name": "users",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          },
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://cannbench.com/api/admin/users"
+      },
+      {
+        "id": "197bd9aa9e8dd50a",
+        "kind": "other",
+        "name": "site-features",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://cannbench.com/api/meta/site-features"
+      },
+      {
+        "id": "c0479d4095839b7f",
+        "kind": "other",
+        "name": "me",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://cannbench.com/api/auth/me"
+      },
+      {
+        "id": "3c216d94fb98962c",
+        "kind": "other",
+        "name": "maintenance",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://cannbench.com/api/meta/maintenance"
+      }
+    ],
+    "id": "a13cb4bf-a3ad-4ed4-b159-2d8cf8cf50a6",
+    "inlineSvgs": [
+      {
+        "id": "d5490ae6c0c2cb6c",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><rect x=\"1.5\" y=\"1.5\" width=\"4.5\" height=\"4.5\" rx=\"1\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></rect><rect x=\"8\" y=\"1.5\" width=\"4.5\" height=\"4.5\" rx=\"1\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></rect><rect x=\"1.5\" y=\"8\" width=\"4.5\" height=\"4.5\" rx=\"1\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></rect><rect x=\"8\" y=\"8\" width=\"4.5\" height=\"4.5\" rx=\"1\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></rect></svg>",
+        "name": "svg-1"
+      },
+      {
+        "id": "92fc20f24ad575bd",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M7 1.5L12 4v6L7 12.5L2 10V4L7 1.5z\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\" stroke-linejoin=\"round\"></path><path d=\"M2 4l5 2.5L12 4M7 6.5v6\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></path></svg>",
+        "name": "svg-2"
+      },
+      {
+        "id": "7683291df0cc805e",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 1.75h5.2L11 4.55v7.7H3V1.75z\" stroke=\"var(--fg-4)\" stroke-width=\"1.35\" stroke-linejoin=\"round\"></path><path d=\"M8.2 1.75v2.8H11M4.8 6.5h4.4M4.8 8.6h4.4M4.8 10.7h2.7\" stroke=\"var(--fg-4)\" stroke-width=\"1.25\" stroke-linecap=\"round\"></path></svg>",
+        "name": "svg-3"
+      },
+      {
+        "id": "e57dbde7cbfa5832",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><rect x=\"1.5\" y=\"6\" width=\"3\" height=\"6.5\" rx=\"0.6\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></rect><rect x=\"5.5\" y=\"3\" width=\"3\" height=\"9.5\" rx=\"0.6\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></rect><rect x=\"9.5\" y=\"8\" width=\"3\" height=\"4.5\" rx=\"0.6\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\"></rect></svg>",
+        "name": "svg-4"
+      },
+      {
+        "id": "496988d71e3971ae",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M7 2v10M2 7h10\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\" stroke-linecap=\"round\"></path></svg>",
+        "name": "svg-5"
+      },
+      {
+        "id": "12a58677d6590453",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M1.5 7h2.5l1.5-3.5L8 11l1.5-4h3\" stroke=\"var(--fg-4)\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+        "name": "svg-6"
+      },
+      {
+        "id": "fc57b5301b5f1e7c",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M7.5 1.5l-4 6h3l-1.5 5 4.5-6h-3l1-5z\" stroke=\"#ffffff\" stroke-width=\"1.4\" stroke-linejoin=\"round\"></path></svg>",
+        "name": "svg-7"
+      },
+      {
+        "id": "d2bd43181cf25a47",
+        "markup": "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M6 1.5H2.5A1 1 0 001.5 2.5v9a1 1 0 001 1h9a1 1 0 001-1V8\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M8 1.5h4.5V6\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M12.5 1.5L7 7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+        "name": "svg-8"
+      },
+      {
+        "id": "0cf18ae51a8e31d6",
+        "markup": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4.2\" stroke=\"currentColor\" stroke-width=\"1.8\"></circle><path d=\"M12 2.8v2M12 19.2v2M4.8 4.8l1.4 1.4M17.8 17.8l1.4 1.4M2.8 12h2M19.2 12h2M4.8 19.2l1.4-1.4M17.8 6.2l1.4-1.4\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"></path></svg>",
+        "name": "svg-9"
+      }
+    ],
+    "pageUrl": "https://cannbench.com/admin",
+    "summary": {
+      "byKind": {
+        "font": 0,
+        "image": 0,
+        "other": 5,
+        "script": 1,
+        "stylesheet": 2,
+        "video": 0
+      },
+      "inlineSvgCount": 9,
+      "totalCount": 8
+    }
+  },
+  "bundle": {
+    "assets": [
+      {
+        "contentType": "",
+        "id": "11ee9f4b3f5c229c",
+        "kind": "stylesheet",
+        "name": "css2",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/11ee9f4b3f5c229c",
+        "url": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap"
+      },
+      {
+        "contentType": "",
+        "id": "019a3448b59b1db7",
+        "kind": "stylesheet",
+        "name": "index-CsThEqRM.css",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/019a3448b59b1db7.css",
+        "url": "https://cannbench.com/assets/index-CsThEqRM.css"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "d5490ae6c0c2cb6c",
+        "kind": "image",
+        "name": "svg-1",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/d5490ae6c0c2cb6c.svg",
+        "url": "inline-svg:d5490ae6c0c2cb6c"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "92fc20f24ad575bd",
+        "kind": "image",
+        "name": "svg-2",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/92fc20f24ad575bd.svg",
+        "url": "inline-svg:92fc20f24ad575bd"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "7683291df0cc805e",
+        "kind": "image",
+        "name": "svg-3",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/7683291df0cc805e.svg",
+        "url": "inline-svg:7683291df0cc805e"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "e57dbde7cbfa5832",
+        "kind": "image",
+        "name": "svg-4",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/e57dbde7cbfa5832.svg",
+        "url": "inline-svg:e57dbde7cbfa5832"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "496988d71e3971ae",
+        "kind": "image",
+        "name": "svg-5",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/496988d71e3971ae.svg",
+        "url": "inline-svg:496988d71e3971ae"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "12a58677d6590453",
+        "kind": "image",
+        "name": "svg-6",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/12a58677d6590453.svg",
+        "url": "inline-svg:12a58677d6590453"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "fc57b5301b5f1e7c",
+        "kind": "image",
+        "name": "svg-7",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/fc57b5301b5f1e7c.svg",
+        "url": "inline-svg:fc57b5301b5f1e7c"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "d2bd43181cf25a47",
+        "kind": "image",
+        "name": "svg-8",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/d2bd43181cf25a47.svg",
+        "url": "inline-svg:d2bd43181cf25a47"
+      },
+      {
+        "contentType": "image/svg+xml",
+        "id": "0cf18ae51a8e31d6",
+        "kind": "image",
+        "name": "svg-9",
+        "path": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/0cf18ae51a8e31d6.svg",
+        "url": "inline-svg:0cf18ae51a8e31d6"
+      }
+    ],
+    "directoryPath": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35",
+    "failures": [],
+    "manifestPath": "/var/folders/wj/nd900vqd3wl1kztdsn2r8pcw0000gn/T/browser-use/assets/c8189557-7ed8-4bb9-89f3-78e04357cf35/manifest.json",
+    "summary": {
+      "downloadedCount": 11,
+      "elapsedMs": 450.6566660000244,
+      "failedCount": 0,
+      "requestedCount": 11
+    }
+  }
+}
