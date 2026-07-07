@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理后台 - CANN-Bench</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="shell nav">
+        <a class="brand" href="./index.html"><span class="brand-mark">CB</span><span>CANN-Bench</span></a>
+        <div class="nav-main">
+          <a class="nav-link" href="./index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" /><path d="M5.5 10.5V20h13v-9.5" /><path d="M9.5 20v-5h5v5" /></svg>首页</a>
+          <a class="nav-link" href="./benchmarks.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h7v6H4z" /><path d="M13 5.5h7v6h-7z" /><path d="M4 13.5h7v5H4z" /><path d="M13 13.5h7v5h-7z" /></svg>任务包</a>
+          <a class="nav-link" href="./leaderboard.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9" /><path d="M12 19V5" /><path d="M19 19v-7" /><path d="M3 19h18" /></svg>排行榜</a>
+          <a class="nav-link" href="./updates.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4" /></svg>动态</a>
+        </div>
+        <div class="nav-actions">
+          <a class="quick-action" href="./account.html#submit">提交算子</a>
+          <span class="runner-chip"><span class="led"></span>runner 在线</span>
+          <details class="account-menu">
+            <summary><span class="avatar">我</span><span data-account-name>xchang1121</span><span class="chevron"></span></summary>
+            <div class="account-panel">
+              <a href="./account.html#profile">个人信息 <span>→</span></a>
+              <a href="./account.html#jobs">运行记录 <span>→</span></a>
+              <a href="./account.html#tokens">API Token <span>→</span></a>
+              <a href="./admin.html">管理后台 <span>→</span></a>
+              <a href="https://gitcode.com/cann/cann-bench">GitCode 开源仓 <span>↗</span></a>
+              <div class="account-divider"></div>
+              <button type="button" data-action="language"><span>语言</span><span data-language-label>中文</span></button>
+              <button type="button" data-action="theme"><span>主题</span><span data-theme-label>浅色</span></button>
+              <button type="button" data-action="logout"><span>退出登录</span><span>→</span></button>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+
+    <main class="shell page">
+      <section class="section">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>管理后台</h2>
+            <span>维护用户、配额、任务包、runner、权限和安全报告。</span>
+          </div>
+          <div class="actions">
+            <span class="tag is-amber">Maintainer</span>
+            <a class="btn is-ghost" href="./account.html#profile">返回个人信息</a>
+          </div>
+        </div>
+        <div class="grid-4">
+          <a class="cell" href="#users"><span class="tag">Users</span><h3>用户与配额</h3><p>查看用户角色、GitCode 身份、每日提交额度和注册时间。</p></a>
+          <a class="cell" href="#ops"><span class="tag is-mint">Ops</span><h3>运维状态</h3><p>维护 runner 在线状态、维护模式、提交策略和分数刷新。</p></a>
+          <a class="cell" href="#benchmarks"><span class="tag">Bench</span><h3>评测包与子集</h3><p>管理默认任务包、评测包可见性、micro 子集和任务范围。</p></a>
+          <a class="cell" href="#security"><span class="tag is-rose">Security</span><h3>安全报告</h3><p>查看公网部署、认证鉴权、runner 隔离和剩余风险。</p></a>
+        </div>
+      </section>
+
+      <section class="section" id="users">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>用户与配额</h2>
+            <span>保留原管理页里的用户、角色、GitCode、额度和注册信息。</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>用户名</th><th>角色</th><th>每日配额</th><th>GitCode</th><th>注册时间</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>xchang1121</strong></td><td>user</td><td>今日 4 / 10</td><td>xchang1121</td><td>2026/6/25</td></tr>
+              <tr><td><strong>vINyLogY</strong></td><td>user</td><td>无限制</td><td>vINyLogY</td><td>2026/6/22</td></tr>
+              <tr><td><strong>magicjason0007</strong></td><td>maintainer</td><td>无限制</td><td>magicjason0007</td><td>2026/6/27</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="ops">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>运维状态</h2>
+            <span>把维护类能力集中放在管理后台，不和普通提交路径混在一起。</span>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="cell"><span class="tag is-mint">Runner</span><h3>910C / 950PR 在线</h3><p>查看评测队列、硬件状态和维护窗口。</p></div>
+          <div class="cell"><span class="tag">Policy</span><h3>提交策略</h3><p>配置每日额度、私有提交、隐藏集和公开榜单规则。</p></div>
+          <div class="cell"><span class="tag is-amber">Scores</span><h3>分数刷新</h3><p>预览并刷新排行榜分数，避免异常任务污染结果。</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="benchmarks">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>评测包与子集</h2>
+            <span>维护 Official-Tasks、Kernel Bench、micro bench 和默认评测包。</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>评测包</th><th>版本</th><th>算子</th><th>用例</th><th>可见性</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Official-Tasks</strong></td><td>0.3.0</td><td>53</td><td>1060</td><td>公开</td></tr>
+              <tr><td><strong>Kernel Bench</strong></td><td>1.0</td><td>53</td><td>1060</td><td>隐藏</td></tr>
+              <tr><td><strong>Micro Bench</strong></td><td>subset</td><td>16</td><td>320</td><td>公开子集</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="security">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>安全报告</h2>
+            <span>保留原管理页中的安全报告入口，用于维护者审查部署风险。</span>
+          </div>
+          <a class="btn is-ghost" href="#security">打开报告</a>
+        </div>
+        <div class="notice">
+          <strong>Security Safety Report</strong>
+          <span>覆盖公网部署安全控制、认证鉴权链路、runner 隔离、日志和剩余风险。原型中保留入口位置，正式站点可接回完整报告。</span>
+        </div>
+      </section>
+    </main>
+    <script src="./settings.js"></script>
+  </body>
+</html>

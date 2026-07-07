@@ -20,10 +20,13 @@
           <a class="quick-action" href="#submit">提交算子</a>
           <span class="runner-chip"><span class="led"></span>runner 在线</span>
           <details class="account-menu">
-            <summary><span class="avatar">我</span><span>xchang1121</span><span class="chevron"></span></summary>
+            <summary><span class="avatar">我</span><span data-account-name>xchang1121</span><span class="chevron"></span></summary>
             <div class="account-panel">
+              <a href="#profile">个人信息 <span>→</span></a>
               <a href="#jobs">运行记录 <span>→</span></a>
               <a href="#tokens">API Token <span>→</span></a>
+              <a href="./admin.html">管理后台 <span>→</span></a>
+              <a href="https://gitcode.com/cann/cann-bench">GitCode 开源仓 <span>↗</span></a>
               <div class="account-divider"></div>
               <button type="button" data-action="language"><span>语言</span><span data-language-label>中文</span></button>
               <button type="button" data-action="theme"><span>主题</span><span data-theme-label>浅色</span></button>
@@ -39,17 +42,29 @@
         <div class="section-head">
           <div class="section-title">
             <h2>个人工作区</h2>
-            <span>管理你的提交、运行记录、API Token 和账号设置。</span>
+            <span>管理你的个人信息、提交、运行记录、API Token 和账号设置。</span>
           </div>
         </div>
         <div class="side-layout">
           <aside class="side-nav">
-            <a class="is-active" href="#submit">提交算子</a>
+            <a class="is-active" href="#profile">个人信息</a>
+            <a href="#submit">提交算子</a>
             <a href="#jobs">运行记录</a>
             <a href="#tokens">API Token</a>
             <a href="#settings">语言 / 主题 / 退出</a>
           </aside>
           <div>
+            <section class="panel-body" id="profile">
+              <div class="section-title">
+                <h2>个人信息</h2>
+                <span>查看登录身份、站内 ID、角色和今日提交额度。</span>
+              </div>
+              <div class="grid-2 account-summary" style="margin-top:16px;">
+                <div class="cell"><span class="tag">User</span><h3>xchang1121</h3><p>站内 ID：u_gc_468a109dc5158cd2。用于提交记录、排行榜归属和团队聚合。</p></div>
+                <div class="cell"><span class="tag is-mint">Quota</span><h3>今日 4 / 10</h3><p>提交额度会影响是否可以继续运行评测；额度变化可在动态或管理策略中查看。</p></div>
+              </div>
+            </section>
+
             <section class="panel-body" id="submit">
               <div class="section-title">
                 <h2>提交 Official-Tasks</h2>
@@ -104,6 +119,18 @@
               <div class="grid-2" style="margin-top:16px;border:1px solid var(--line);">
                 <div class="cell"><span class="tag">Agent CLI</span><h3>cb_local••••</h3><p>用于本地 agent 或命令行提交，默认不在公共页面展示。</p></div>
                 <div class="cell"><span class="tag is-amber">安全提示</span><h3>请妥善保存 token</h3><p>生成后只展示一次，不要在公开渠道分享。</p></div>
+              </div>
+            </section>
+
+            <section class="panel-body" id="settings">
+              <div class="section-title">
+                <h2>账号设置</h2>
+                <span>低频设置集中放在这里，也可以从右上角账号菜单快速操作。</span>
+              </div>
+              <div class="grid-3" style="margin-top:16px;border:1px solid var(--line);">
+                <div class="cell"><span class="tag">Language</span><h3>中文 / EN</h3><p>中文版确认后，再同步英文版文案。</p></div>
+                <div class="cell"><span class="tag">Theme</span><h3>浅色 / 深色</h3><p>根据浏览环境切换页面主题。</p></div>
+                <div class="cell"><span class="tag is-rose">Session</span><h3>退出登录</h3><p>退出后回到访客状态，提交和 Token 管理需要重新登录。</p></div>
               </div>
             </section>
           </div>

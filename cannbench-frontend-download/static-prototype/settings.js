@@ -76,7 +76,7 @@
     }
 
     if (action === "logout") {
-      document.querySelectorAll(".account-menu summary span:last-child").forEach((name) => {
+      document.querySelectorAll("[data-account-name]").forEach((name) => {
         name.textContent = "访客";
       });
       document.querySelectorAll(".avatar").forEach((avatar) => {
