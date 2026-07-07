@@ -348,33 +348,10 @@ html[data-theme="dark"] .topbar {
 }
 
 html:not([lang="en"]) [data-language-zh],
-html[lang="en"] [data-language-en] {
+html[lang="en"] [data-language-en],
+html:not([data-theme="dark"]) [data-theme-light],
+html[data-theme="dark"] [data-theme-dark] {
   color: #fff;
-  background: var(--blue);
-}
-
-.switch-toggle {
-  width: 42px;
-  height: 24px;
-  display: inline-flex;
-  align-items: center;
-  padding: 2px;
-  border: 1px solid var(--line);
-  border-radius: 99px;
-  background: var(--inset);
-}
-
-.switch-toggle span {
-  width: 18px;
-  height: 18px;
-  display: block;
-  border-radius: 50%;
-  background: var(--soft);
-  transition: transform 0.18s ease, background 0.18s ease;
-}
-
-html[data-theme="dark"] .switch-toggle span {
-  transform: translateX(18px);
   background: var(--blue);
 }
 
@@ -386,6 +363,11 @@ html[data-theme="dark"] .switch-toggle span {
   height: 1px;
   background: var(--line);
   margin: 6px 4px;
+}
+
+.account-divider.is-tight {
+  margin-top: 8px;
+  margin-bottom: 6px;
 }
 
 .page {

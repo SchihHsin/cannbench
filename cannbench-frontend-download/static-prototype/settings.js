@@ -25,7 +25,7 @@
     document.querySelectorAll("[data-theme-label]").forEach((label) => {
       label.textContent = theme === "dark" ? "深色" : "浅色";
     });
-    document.querySelectorAll("[data-theme-switch]").forEach((toggle) => {
+    document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
       toggle.setAttribute("aria-label", theme === "dark" ? "深色主题" : "浅色主题");
     });
   }
