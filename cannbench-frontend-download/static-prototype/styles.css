@@ -268,7 +268,7 @@ html[data-theme="dark"] .topbar {
   position: absolute;
   right: 0;
   top: 42px;
-  width: 220px;
+  width: 256px;
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -276,13 +276,13 @@ html[data-theme="dark"] .topbar {
   box-shadow: 0 18px 48px rgba(37, 43, 58, 0.14);
 }
 
-.account-panel a,
-.account-panel button {
+.menu-item {
   width: 100%;
   min-height: 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 0 10px;
   color: var(--muted);
   border: 0;
@@ -292,10 +292,94 @@ html[data-theme="dark"] .topbar {
   text-align: left;
 }
 
-.account-panel a:hover,
-.account-panel button:hover {
+.menu-item:hover {
   color: var(--blue-dark);
   background: var(--raised);
+}
+
+.menu-left {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.78;
+}
+
+.menu-trail {
+  color: var(--soft);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.menu-switch {
+  cursor: pointer;
+}
+
+.segmented-toggle {
+  height: 24px;
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--inset);
+  color: var(--soft);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.segmented-toggle span {
+  min-width: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+}
+
+html:not([lang="en"]) [data-language-zh],
+html[lang="en"] [data-language-en] {
+  color: #fff;
+  background: var(--blue);
+}
+
+.switch-toggle {
+  width: 42px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--inset);
+}
+
+.switch-toggle span {
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 50%;
+  background: var(--soft);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+html[data-theme="dark"] .switch-toggle span {
+  transform: translateX(18px);
+  background: var(--blue);
+}
+
+.menu-item.is-danger:hover {
+  color: var(--rose);
 }
 
 .account-divider {

@@ -25,12 +25,18 @@
     document.querySelectorAll("[data-theme-label]").forEach((label) => {
       label.textContent = theme === "dark" ? "深色" : "浅色";
     });
+    document.querySelectorAll("[data-theme-switch]").forEach((toggle) => {
+      toggle.setAttribute("aria-label", theme === "dark" ? "深色主题" : "浅色主题");
+    });
   }
 
   function updateLanguage(language) {
     html.lang = language === "en" ? "en" : "zh-CN";
     document.querySelectorAll("[data-language-label]").forEach((label) => {
       label.textContent = language === "en" ? "EN" : "中文";
+    });
+    document.querySelectorAll("[data-language-toggle]").forEach((toggle) => {
+      toggle.setAttribute("aria-label", language === "en" ? "English" : "中文");
     });
   }
 
